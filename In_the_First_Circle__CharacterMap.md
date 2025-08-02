@@ -1,3 +1,5 @@
+<div style="text-align: right">Last updated: 2025-08-02<br>Clicking on Abakumov or Stalin now takes you to their respective Wikipedia page</div>
+
 #  Aleksandr Solzhenitsyn, In the First Circle
 
 ## Overview (from Wikipedia)
@@ -22,7 +24,7 @@ graph TD
 	subgraph Zeks at Marfino sharashka
 		Nerzhin(<b>Gleb Vikentievich Nerzhin</b><br>Glebka, Glebochka, Gleb Vikentich, Vikentich<br>Zek; mathematician; assigned to Acoustics Lab; interlocutor of Rubin and Sologdin; <i>the author's alter ego</i>; age 31)
 		Sologdin(<b>Dmitri Aleksandrovich Sologdin</b><br>Mitya, Mityai, Dmitri Aleksandrych<br>Zek; engineer, designer; assigned to Design Office; serving second term and twelfth year of incarceration; <i>Christian</i>; age 36)
-		Rubin(<b>Lev Grigorievich Rubin</b><br>Levka, Lyova, Lyovka, Lyovochka, Lyovushka<br>Zek; linguist; assigned to Acoustics Lab; steadfast <i>Communist</i>; age 36)
+		Rubin(<b>Lev Grigorievich Rubin</b><br>Levka, Lyova, Lyovka, Lyovochka, Lyovushka<br>Zek; linguist; assigned to Acoustics Lab; <i>steadfast Communist</i>; age 36)
 		Nerzhin<--->Sologdin
 		Nerzhin<--->Rubin
 		Rubin<--->Sologdin
@@ -54,7 +56,7 @@ graph TD
 ```mermaid
 graph TD
 	%% Soviet diplomat who makes the call
-	Volodin(<b>Innokenty Artemievich Volodin</b><br>Ini, Ink, Inok<br>Diplomat, State Counselor Grade Two in Ministry of Foreign Affairs, equivalent in rank to a lieutenant colonel; the story opens with his phone call to the U.S. Embassy; age 30)
+	Volodin(<b>Innokenty Artemievich Volodin</b><br>Ini, Ink, Inok<br>Diplomat, State Counselor Grade Two in Ministry of Foreign Affairs, equivalent in rank to a lieutenant colonel; <i>the story opens with his phone call to the U.S. Embassy</i>; age 30)
 	Volodina(<b>Dotnara Petrovna Volodina</b><br>Dotty, Nara<br>Wife of Innokenty Volodin; daughter of Pyotr Makarygin)
 	Volodin <-- spouse ---> Volodina
 	
