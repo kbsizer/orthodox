@@ -1,4 +1,4 @@
-<div style="text-align: right">Last updated: 2025-08-02<br>Clicking on Abakumov or Stalin now takes you to their respective Wikipedia page</div>
+<div style="text-align: right">Last updated: 2025-08-08<br>added missing parent-child connection</div>
 
 #  Aleksandr Solzhenitsyn, In the First Circle
 
@@ -58,7 +58,9 @@ graph TD
 	%% Soviet diplomat who makes the call
 	Volodin(<b>Innokenty Artemievich Volodin</b><br>Ini, Ink, Inok<br>Diplomat, State Counselor Grade Two in Ministry of Foreign Affairs, equivalent in rank to a lieutenant colonel; <i>the story opens with his phone call to the U.S. Embassy</i>; age 30)
 	Volodina(<b>Dotnara Petrovna Volodina</b><br>Dotty, Nara<br>Wife of Innokenty Volodin; daughter of Pyotr Makarygin)
+	Makarygin(<b>Pyotr Afanasievich Makarygin</b><br>Public prosecutor in Moscow; father of Dinera, Dotnara, and Klara)
 	Volodin <-- spouse ---> Volodina
+	Makarygin -- daughter ---> Volodina
 	
 	%% Others
 	Stalin(<b>Joseph Stalin</b><br>Iosif Vissarionovich Djugashvili<br>Soso, Koba, Iossarionych)
@@ -75,7 +77,7 @@ graph TD
 	end
 	Abakumov -.-> Selivanovsky
     
-    Makarygin(<b>Pyotr Afanasievich Makarygin</b><br>Public prosecutor in Moscow; father of Dinera, Dotnara, and Klara)
+    
 	
 	%% Color and Highlighting Directives    
     classDef green fill:#cfa,stroke:#333,stroke-width:2px;
