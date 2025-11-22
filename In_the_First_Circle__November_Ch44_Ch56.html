@@ -1,0 +1,780 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; white-space: nowrap; overflow: visible; }
+foreignobject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&amp;subset=latin,latin-ext' type='text/css' />
+<style type='text/css'  id="style-theme_css">/* Ken's Typora Theme 
+ *
+ * Key Features:
+ * 	- Legal Numbering of headings
+ *  - Indentation of headings and text
+ *  - Use of color and strikethrough to contrast complete and incomplete tasks
+ *  - Use of full screen width
+ *  - Table of Contents limited to H2 and H3 only
+ *
+ * Note: Double slash comments (//) are problematic and should be avoided!
+ *
+ *********************************************/
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+/**** Mermaid (work in progress) ****/
+
+.mermaid .label {
+  color: #323D47;
+}
+
+.node text {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px;
+}
+
+/**** Code mode ****/
+
+.cm-s-typora-default {
+  background-color: #fff;
+  color: #040;
+  min-width: 100%;
+}
+
+.cm-s-typora-default .cm-header {
+  background-color: #fff;
+  color: #080;
+  min-width: 100%;
+}
+
+@include-when-export url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Helvetica","Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write{
+    /* max-width: 860px; */
+  	margin: 0 auto;
+  	padding: 20px 30px 40px 30px;
+	padding-top: 20px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+body > *:first-child {
+    margin-top: 0 !important;
+}
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    /*background: url("file:///C://Users//kbsiz//AppData//Roaming//images/modules/styleguide/para.png") no-repeat 10px center;*/
+    text-decoration: none;
+		color: #ff0000 !important;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+}
+
+/**************************************************/
+/** Legal Numbering of headings (starting at H2) **/ 
+/**************************************************/
+
+/** initialize css counter */
+h1 {
+    counter-reset: h2;
+}
+
+h2 {
+    counter-reset: h3;
+}
+
+h3 {
+    counter-reset: h4;
+	margin-left: 30px;
+}
+
+h4 {
+    counter-reset: h5;
+	margin-left: 60px;
+}
+
+h5 {
+    counter-reset: h6;
+	margin-left: 90px;
+}
+
+h6 {
+	margin-left: 120px;
+}
+
+/** put counter result into headings */
+
+#write h2:before {
+    counter-increment: h2;
+    content: counter(h2) ") "
+}
+
+#write h3:before,
+h3.md-focus.md-heading:before /** override the default style for focused headings */ {
+    counter-increment: h3;
+    content: counter(h2) "." counter(h3) ") "
+}
+
+#write h4:before,
+h4.md-focus.md-heading:before {
+    counter-increment: h4;
+    content: counter(h2) "." counter(h3) "." counter(h4) ") "
+}
+
+#write h5:before,
+h5.md-focus.md-heading:before {
+    counter-increment: h5;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ") "
+}
+
+#write h6:before,
+h6.md-focus.md-heading:before {
+    counter-increment: h6;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ") "
+}
+
+/*** override the default style/decorations for focused headings ***/
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    color: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: inherit;
+    left:initial;
+    float: none;
+    top:initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+p,
+ul,
+ol,
+dl,
+table,
+figure {
+	margin-left: 120px;
+	margin-right: 120px;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;	
+}
+
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 4px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+    border-bottom: 1px solid #ddd;
+    margin-left: 120px;
+}
+
+body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+/* BLOCK QUOTES ************************************************/
+
+blockquote {
+    border-left: 4px solid #337;
+    padding: 0 5px;
+    color: #337;
+	margin-left: 120px;
+	margin-right: 30px;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+}
+
+blockquote p {
+	margin-left: 30px;
+}
+
+blockquote blockquote {
+    padding-right: 0;
+}
+
+/*** TABLES ***********************************************/
+
+table {
+    padding: 120px;
+    word-break: initial;
+	width: auto;
+}
+table tr {
+    border-top: 1px solid #cccccc;
+    margin: 0;
+    padding: 0;
+}
+
+/* make rows alternate background color */
+table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+/*** Code Blocks ***********************************************/
+
+.CodeMirror-gutters {
+    border-right: 1px solid #ddd;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;	
+}
+
+.md-fences {
+	margin-left: 120px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 0.2em 1em;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+/* TABLE OF CONTENTS (Show H2 and H3 only) **************************************/
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;	
+	background-color: #eee;
+}
+
+/* .md-toc-h1, .md-toc-h4, .md-toc-h5, .md-toc-h6  {           <-- Use this to include H2 and H3 only */
+.md-toc-h1, .md-toc-h3, .md-toc-h4, .md-toc-h5, .md-toc-h6  {    /* <-- H2 only */
+  display:  none;  
+}
+
+/*** TO-DO TASK LISTS ******************************************/
+
+.task-list-done {    		/* styles for completed tasks */
+	text-decoration: none;   
+	color: #020;				
+}
+.task-list-not-done {		/* styles for incomplete tasks */
+	text-decoration: none; 
+	color: #900;
+}
+/*
+.task-list-item input {
+  top: 0px;    * 3px;  *
+  left: 0px;   * 8px; *
+  right: 0px;      
+}
+*/
+
+/*** MEDIA ******************************************************/
+
+@media screen and (min-width: 914px) {
+    /*body {
+        width: 854px;
+        margin: 0 auto;
+    }*/
+}
+
+/*********************** Work in progress: Trying to reduce HUGE margins when printing */
+@media print {
+    @page { 
+        size: 8.5in 11in; 
+        margin: 0in; 
+        padding: 0in; 
+    }
+
+    html {
+        font-size: 13px;
+    }
+    /* commented out -- causes lonely headings to print on one page, table on next
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    */
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+/*** DISABLE Little blocks in front of current line showing heading level ***
+
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+		color: #FF00FF;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+		color: #FF00FF;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+		color: #FF00FF;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+	color: #FF00FF;
+}
+***************** END DISABLED BLOCK ****************************/
+
+.md-image>.md-meta {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag{
+	color: inherit;
+}
+
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#md-notification:before {
+    top: 10px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+
+<title>In_the_First_Circle__November_Ch44_Ch56</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><div style="text-align: right">Last updated: 2025-11-22<br>added more chapter summaries</div><h1 id='aleksandr-solzhenitsyn-in-the-first-circle-november-2025-meeting'><span>Aleksandr Solzhenitsyn, In the First Circle, November 2025 Meeting</span></h1><h2 id='chapters-44-56'><span>Chapters 44-56</span></h2><h3 id='chapter-44-out-in-the-open'><span>Chapter 44 Out in the Open</span></h3><p><span>Klara and her brother-in-law, Innokenty, embark on a secret day trip to the countryside, during which Innokenty reveals his deep disillusionment with Soviet society and his personal unhappiness. Their journey takes them through a poignant landscape, including a forgotten cemetery and a decaying village church, culminating in Innokenty expressing his despair about the division between Russia and the rest of humanity. The chapter concludes with Klara&#39;s successful clearance by the Special Section, leading to her entry into the Marfino complex.</span></p><h4 id='characters'><span>Characters</span></h4><ul><li><p><strong><span>Klara:</span></strong><span> A young, unmarried woman who is curious about life&#39;s mysteries and increasingly drawn to her brother-in-law, Innokenty. She listens to his grievances and shares a developing connection with him.</span></p></li><li><p><strong><span>Innokenty:</span></strong><span> Klara&#39;s brother-in-law and Nara&#39;s husband, a diplomat who feels profoundly disillusioned with Soviet life and propaganda, and is unhappy in his marriage. He appears physically frail and weary.</span></p></li><li><p><strong><span>Nara:</span></strong><span> Klara&#39;s sister and Innokenty&#39;s wife, frequently complains about her husband&#39;s professional conduct and their material position. Klara perceives her as self-absorbed and valuing status over Innokenty&#39;s well-being.</span></p></li><li><p><strong><span>Alevtina Nikanorovna:</span></strong><span> Klara and Nara&#39;s mother, who often discusses Nara&#39;s marital problems with her.</span></p></li><li><p><strong><span>Woman with cataracts:</span></strong><span> A villager in Rozhdestvo, whom Klara and Innokenty try to ask for directions.</span></p></li><li><p><strong><span>Old woman in galoshes:</span></strong><span> A hard-of-hearing villager in Rozhdestvo, who explains the local church was shut down and its bricks sent to Nara.</span></p></li><li><p><strong><span>Neckless peasant:</span></strong><span> A villager in Rozhdestvo who briefly appears to ask for a cigarette and identifies the church as the &quot;Church of the Nativity.&quot;</span></p></li><li><p><strong><span>One-legged man:</span></strong><span> A villager in Rozhdestvo who explains the church&#39;s altar was smashed to make a road and points out a nearby cattle yard.</span></p></li></ul><h4 id='summary'><span>Summary</span></h4><ul><li><p><span>Klara and Innokenty embark on a secret day trip to the countryside, meeting at Kiev Station without informing their family.</span></p></li><li><p><span>On the train, Innokenty critiques Soviet newspapers, explaining how they twist information to serve propaganda.</span></p></li><li><p><span>They find a secluded cemetery where Innokenty reflects on his mother&#39;s burial and the early onset of weariness in a life full of lies.</span></p></li><li><p><span>They visit the village of Rozhdestvo (Church of the Nativity), finding a dilapidated church, and learn from villagers that its altar was used to build a road.</span></p></li><li><p><span>Resting by a brook, Innokenty expresses despair, stating his life is &quot;in ruins&quot; and explaining humanity is divided into separate, alien &quot;fatherlands.&quot;</span></p></li><li><p><span>Their outing concludes as they witness a long column of military trucks, and Klara later receives and passes forms from the Special Section, gaining entry to the Marfino complex.</span></p></li></ul><h3 id='chapter-45-the-running-dogs-of-imperialism'><span>Chapter 45 The Running Dogs of Imperialism</span></h3><p><span>A new employee, Klara, begins work at the Vacuum Laboratory, where she interacts with prisoners labeled as &quot;running dogs of imperialism.&quot; She grows to question their alleged guilt, especially after befriending the young prisoner Rostislav and learning his story, leading to a significant emotional connection between them.</span></p><h4 id='characters-2'><span>Characters</span></h4><ul><li><p><strong><span>Klara:</span></strong><span> A new free employee in the Vacuum Laboratory, initially fearful, who develops sympathy for the prisoners and forms a bond with Rostislav.</span></p></li><li><p><strong><span>Major Shikin:</span></strong><span> A stern officer who briefs Klara and other new girls about the dangerous &quot;spies&quot; they will be working with.</span></p></li><li><p><strong><span>Yakonov:</span></strong><span> The apathetic, plump, middle-aged Jewish captain in charge of the Vacuum Laboratory, Klara&#39;s boss.</span></p></li><li><p><strong><span>Tamara:</span></strong><span> A free employee in the Vacuum Laboratory, Klara&#39;s colleague, who is at ease with the prisoners.</span></p></li><li><p><strong><span>Zemelya:</span></strong><span> A middle-aged vacuum man (prisoner) with a &quot;sunny nature,&quot; known for his constant grinning and nostalgic stories of the past.</span></p></li><li><p><strong><span>Dvoetyosov:</span></strong><span> The oldest vacuum man (prisoner), tall and ungainly, who expresses contempt for free staff and questions the notion of socialism.</span></p></li><li><p><strong><span>Rostislav (Ruska):</span></strong><span> The youngest vacuum man (prisoner), hardly more than a boy, who shows immediate adoration for Klara and later reveals his story of unjust imprisonment.</span></p></li><li><p><strong><span>Ivan the glassblower:</span></strong><span> A superb craftsman and petty lawbreaker (prisoner) who tells Klara his story of being forced into labor despite not being a political offender.</span></p></li><li><p><strong><span>Ernst Golovanov (Saunkin):</span></strong><span> A well-read literary critic and candidate member of the Writers Union who becomes Klara&#39;s friend and offers a philosophical view on innocent suffering.</span></p></li></ul><h4 id='summary-2'><span>Summary</span></h4><ul><li><p><span>Klara is briefed by Major Shikin about working with dangerous spies and begins her assignment in the Vacuum Laboratory among prisoners.</span></p></li><li><p><span>She observes the vacuum men û Zemelya, Dvoetyosov, and Rostislav û each with distinct personalities, and starts to doubt the official narrative about their guilt.</span></p></li><li><p><span>Klara befriends Ernst Golovanov, and during a theater outing, she expresses her suspicion about innocent prisoners, to which Ernst explains it as an inevitable part of &quot;the law of large numbers&quot; in historical processes.</span></p></li><li><p><span>Rostislav tells Klara his story of being arrested and interrogated for fishing with American embassy staff, revealing his past was not &quot;hideous&quot; but a story of lost youth.</span></p></li><li><p><span>During a quiet evening in the lab, Rostislav confesses his adoration for Klara and kisses her, which she reciprocates before asking him to leave.</span></p></li><li><p><span>Klara feels a troubled happiness after the kiss and busies herself with a craft, while the prisoners in the lab prepare for a New Year&#39;s party.</span></p></li></ul><h3 id='chapter-46-the-castle-of-the-holy-grail'><span>Chapter 46 The Castle of the Holy Grail</span></h3><p><span>After a challenging visit with his wife, Nerzhin seeks solitude within the sharashka, eventually finding his way to the studio of fellow prisoner Kondrashov-Ivanov. There, amidst the artist&#39;s work, they engage in a deep philosophical discussion about art, the Russian spirit, and the nature of good and evil, culminating in the artist revealing his most profound sketch.</span></p><h4 id='characters-3'><span>Characters</span></h4><ul><li><p><strong><span>Nerzhin:</span></strong><span> A prisoner reflecting on his life, the impact of prison, and his complicated relationship with his wife after a recent visit.</span></p></li><li><p><strong><span>Senior Lieutenant Shusterman:</span></strong><span> A guard who instructs Nerzhin to go indoors when he is trying to find solitude in the exercise yard.</span></p></li><li><p><strong><span>Kondrashov-Ivanov:</span></strong><span> A prisoner-artist, a descendant of a Decembrist, known for his large, powerful, and often unappreciated paintings, who holds strong philosophical views.</span></p></li><li><p><strong><span>Nadya:</span></strong><span> Nerzhin&#39;s wife, exhausted and contemplating divorce, whose visit leaves Nerzhin with a mixture of affection and gloomy thoughts.</span></p></li><li><p><strong><span>Parsifal:</span></strong><span> A legendary figure, guardian of the Holy Grail, who serves as the subject for Kondrashov-Ivanov&#39;s most important, unfinished sketch.</span></p></li></ul><h4 id='summary-3'><span>Summary</span></h4><ul><li><p><span>Nerzhin, after a difficult visit from his wife, seeks solitude in the prison yard but is instructed by Senior Lieutenant Shusterman to go indoors.</span></p></li><li><p><span>He makes his way to Kondrashov-Ivanov&#39;s rarely-used studio on the third floor, where the artist is deeply absorbed in his work.</span></p></li><li><p><span>Nerzhin silently contemplates his wife&#39;s talk of divorce and the unexpected value he has found in his five years of imprisonment.</span></p></li><li><p><span>Nerzhin and Kondrashov-Ivanov engage in a philosophical debate about art, the Russian landscape, and the true scale of good and evil in their contemporary world.</span></p></li><li><p><span>Kondrashov-Ivanov passionately argues that an inner essence and a &quot;chivalrous duty&quot; should prevent prison from breaking a man&#39;s spirit, contradicting Nerzhin&#39;s experience.</span></p></li><li><p><span>The artist then reveals a small, cherished sketch, &quot;The Castle of the Holy Grail,&quot; depicting Parsifal&#39;s awe-struck first glimpse of the legendary castle.</span></p></li></ul><h3 id='chapter-47-top-secret-conversation'><span>Chapter 47 Top Secret Conversation</span></h3><p><span>During an exercise break, Rubin secretly approaches Nerzhin to recruit him for a top-secret &quot;phonoscopy&quot; project aimed at identifying an alleged traitor. Their conversation quickly escalates into a profound philosophical debate about socialist ideals, justice, the morality of state actions, and the atomic bomb.</span></p><h4 id='characters-4'><span>Characters</span></h4><ul><li><p><strong><span>Nerzhin (Gleb):</span></strong><span> A thoughtful prisoner who values solitude and engages in deep philosophical questioning.</span></p></li><li><p><strong><span>Rubin (Lev):</span></strong><span> A fellow prisoner and friend, enthusiastic about a secret &quot;phonoscopy&quot; project to identify a &quot;traitor&quot; and a staunch defender of socialist ideals.</span></p></li><li><p><strong><span>Doronin (Ruska):</span></strong><span> A cheerful junior who interrupts their secret conversation at the end.</span></p></li></ul><h4 id='summary-4'><span>Summary</span></h4><ul><li><p><span>Rubin approaches Nerzhin during his solitary exercise to discuss an urgent, secret matter.</span></p></li><li><p><span>Rubin reveals a top-secret &quot;phonoscopy&quot; assignment to identify an individual from a recorded phone call, asking Nerzhin for help.</span></p></li><li><p><span>Nerzhin expresses strong apprehension about the project, viewing it as dangerous and morally corrupt.</span></p></li><li><p><span>Rubin explains his motivation is to catch a &quot;wretched little careerist&quot; he believes is obstructing socialism.</span></p></li><li><p><span>The two friends engage in a heated debate about the nature of justice, the ideals of socialism versus capitalism, and the morality of stealing the atom bomb.</span></p></li><li><p><span>Nerzhin ultimately refuses to join the project, stating he will not help &quot;them&quot; steal the atom bomb.</span></p></li><li><p><span>Doronin interrupts their conversation with a jovial but cryptic offer to &quot;sell all the Judases.&quot;</span></p></li></ul><h3 id='chapter-48-the-double-agent'><span>Chapter 48 The Double Agent</span></h3><p><span>Rostislav &quot;Ruska&quot; Doronin, a young, cunning zek, agrees to become an MGB informer for Major Shikin, intending to act as a double agent for the common good. He subsequently informs influential prisoners of his plan and, under pressure for material, provides denunciations while also planning to publicly expose other informers.</span></p><h4 id='characters-5'><span>Characters</span></h4><ul><li><p><strong><span>Rostislav Doronin (Ruska):</span></strong><span> A young, lively zek recruited by the MGB as an informer, but who intends to be a double agent.</span></p></li><li><p><strong><span>Major Shikin:</span></strong><span> An MGB operations officer who recruits Ruska, believing him to be an easily manipulated new informant.</span></p></li><li><p><strong><span>Nerzhin:</span></strong><span> A fellow prisoner and confidant of Ruska, who listens to his plans and discussions.</span></p></li><li><p><strong><span>Rubin:</span></strong><span> Another fellow prisoner, present with Nerzhin when Ruska discusses his scheme to expose informers.</span></p></li><li><p><strong><span>Klara Kudryavtseva:</span></strong><span> A woman whose kiss fills Ruska with confidence; he suggests her name for a phony money order sender.</span></p></li></ul><h4 id='summary-5'><span>Summary</span></h4><ul><li><p><span>Ruska, a young zek with a deceptive past, is secretly called to Major Shikin&#39;s office and agrees to become an MGB informer.</span></p></li><li><p><span>Ruska immediately informs influential prisoners that he consented to being an informer to use his position for the common good.</span></p></li><li><p><span>Under pressure for &quot;material,&quot; Ruska orchestrates the dismissal of a disliked female employee through fabricated accusations.</span></p></li><li><p><span>Ruska occasionally reports innocuous trifles about prisoners to Shikin, but eventually stops giving warnings to his targets.</span></p></li><li><p><span>Despite his initial intent, Ruska experiences social isolation as other zeks subtly steer clear of him, wary of double-dealers.</span></p></li><li><p><span>Ruska tells Nerzhin and Rubin about the specific 147-ruble money orders informers receive quarterly, identifying them as &quot;the mark of Judas.&quot;</span></p></li><li><p><span>Ruska announces his plan for zeks to gather at headquarters the next day to publicly examine these distinctive money orders and identify informers.</span></p></li></ul><h3 id='chapter-49-life-is-not-a-novel'><span>Chapter 49 Life Is Not a Novel</span></h3><p><span>The chapter depicts an ordinary Sunday afternoon in a graduate student dormitory room, where five female roommates engage in everyday activities and share personal stories. It contrasts Lyuda&#39;s superficial anecdotes about men and money with Muza&#39;s deep distress from being coerced into becoming an informer, and Dasha&#39;s disillusionment with life and love, culminating in the arrival of Nadya, whose &quot;missing husband&quot; story is revealed to be a likely fabrication.</span></p><h4 id='characters-6'><span>Characters</span></h4><ul><li><p><strong><span>Olenka:</span></strong><span> A pragmatic graduate student, ironing and happy with her current lover.</span></p></li><li><p><strong><span>Muza:</span></strong><span> A plump, glasses-wearing graduate student struggling with Turgenev, deeply disturbed after being recruited as an informer.</span></p></li><li><p><strong><span>Lyuda:</span></strong><span> A new, superficial graduate, frequently telling exaggerated stories about her encounters with men and focused on financial prospects.</span></p></li><li><p><strong><span>Erzhika:</span></strong><span> A Hungarian graduate student, reading, fearful of rats, and anxious about the political situation in her home country.</span></p></li><li><p><strong><span>Dasha:</span></strong><span> An energetic, observant graduate student, who reveals she fabricated her profession to attract men and questions Nadya&#39;s husband&#39;s disappearance.</span></p></li><li><p><strong><span>Nadya:</span></strong><span> A chemistry student who arrives silently, believed by Dasha to be fabricating the story of her husband being &quot;missing in action.&quot;</span></p></li></ul><h4 id='summary-6'><span>Summary</span></h4><ul><li><p><span>The five graduate student roommates are in their shared room, engaged in activities like ironing, writing, reading, and removing curlers.</span></p></li><li><p><span>Lyuda entertains the others with an embellished story of a Spanish poet&#39;s infatuation, which she manipulated by feigning virginity, and discusses marriage for money.</span></p></li><li><p><span>Muza struggles to write a letter, consumed by distress from a recent encounter where two men blackmailed her into becoming an informer.</span></p></li><li><p><span>Erzhika expresses her severe fear of the dormitory&#39;s rats and recounts her unsuccessful attempt to secure private housing through the embassy.</span></p></li><li><p><span>Dasha arrives, recounting her ruse of pretending to be a bathhouse cashier to attract a man, lamenting the scarcity of eligible partners and the disillusionment of her life.</span></p></li><li><p><span>Dasha, &quot;the investigator,&quot; analyzes Nadya&#39;s behavior and concludes that her husband is not missing but has left her, a fact Nadya is ashamed to admit.</span></p></li><li><p><span>Nadya enters the room, looking drawn and silent, appearing to confirm Dasha&#39;s theory, as the chapter concludes with the repeated sentiment that &quot;life isn&#39;t like in books.&quot;</span></p></li></ul><h3 id='chapter-50-the-old-maid'><span>Chapter 50 The Old Maid</span></h3><p><span>Nadya, grappling with her imprisoned husband&#39;s grim prognosis and the need to secure her own future by considering divorce, returns to her dormitory. Her deep despair clashes with her roommates&#39; more immediate concerns about money, dates, and academic struggles, culminating in a bitter argument that leaves Nadya feeling profoundly isolated.</span></p><h4 id='characters-7'><span>Characters</span></h4><ul><li><p><strong><span>Nadya:</span></strong><span> A graduate student consumed by sorrow over her imprisoned husband and the difficult choice to divorce him for a job, feeling increasingly isolated.</span></p></li><li><p><strong><span>SologdinÆs wife:</span></strong><span> A friend of Nadya, also affected by a husband&#39;s imprisonment, whom Nadya tried to visit.</span></p></li><li><p><strong><span>Little boy:</span></strong><span> A street vendor who sells Nadya cigarettes and offers matches.</span></p></li><li><p><strong><span>Lyuda:</span></strong><span> Nadya&#39;s outgoing and celebratory roommate, preparing for an evening out, who clashes with Nadya.</span></p></li><li><p><strong><span>Erzhika:</span></strong><span> Nadya&#39;s roommate, still learning domestic skills, who goes to the Lenin Library.</span></p></li><li><p><strong><span>Muza:</span></strong><span> Nadya&#39;s intellectual roommate, often absorbed in reading, who tries to mediate conflicts.</span></p></li><li><p><strong><span>Dasha:</span></strong><span> Nadya&#39;s pessimistic roommate, struggling with multiple politically sensitive thesis topics.</span></p></li><li><p><strong><span>Olenka:</span></strong><span> Nadya&#39;s cheerful roommate, excited about extra book money and preparing for a date, but also aware of her own past tragedies.</span></p></li><li><p><strong><span>Shchagov:</span></strong><span> A visitor who arrives at the dormitory room at the chapter&#39;s end.</span></p></li></ul><h4 id='summary-7'><span>Summary</span></h4><ul><li><p><span>Nadya returns shattered after failing to visit Sologdin&#39;s wife, intensifying her forebodings about her husband&#39;s permanent imprisonment and the need to divorce him for a job.</span></p></li><li><p><span>She contemplates the painful decision to divorce her husband to complete a politically revised thesis and secure a special assignment to avoid expulsion.</span></p></li><li><p><span>Olenka becomes excited by news of increased book money, while Dasha and Olenka recount their own struggles with politically motivated thesis revisions.</span></p></li><li><p><span>Olenka confronts Nadya about her gloomy mood, saying that man is a social animal and shouldn&#39;t spread unhappiness, leading to a tense exchange about personal suffering.</span></p></li><li><p><span>Nadya provokes Lyuda by commenting on her messy bed, escalating into a shouting match where Lyuda calls Nadya an &quot;old maid&quot; and jealous.</span></p></li><li><p><span>Nadya collapses onto her bed in tears, while Lyuda and Olenka finish preparing and leave the room for their evening plans.</span></p></li><li><p><span>Dasha and Muza discuss Olenka&#39;s relationship with cynicism, followed by a power cut that leaves the room in darkness and silence.</span></p></li></ul><h3 id='chapter-51-fire-and-hay'><span>Chapter 51 Fire and Hay</span></h3><p><span>Nadya is distressed by her husband&#39;s permanent imprisonment and her roommates&#39; harsh words, finding a brief change of mood with Shchagov&#39;s visit. After her roommates leave, Shchagov confronts Nadya about her mixed signals regarding their relationship, before ultimately revealing he is engaged.</span></p><h4 id='characters-8'><span>Characters</span></h4><ul><li><p><strong><span>Nadya:</span></strong><span> A lonely student, upset by her husband&#39;s imprisonment and her roommates&#39; insults, who is drawn to Shchagov.</span></p></li><li><p><strong><span>Shchagov:</span></strong><span> A confident, jocular man who visits Nadya&#39;s room and is aware of her apparent interest in him.</span></p></li><li><p><strong><span>Dasha:</span></strong><span> Nadya&#39;s roommate, who dislikes Shchagov&#39;s jokes and leaves with Muza for the movies.</span></p></li><li><p><strong><span>Muza:</span></strong><span> Nadya&#39;s roommate, who finds Shchagov&#39;s stories unamusing and leaves with Dasha.</span></p></li><li><p><strong><span>Gleb:</span></strong><span> A person Nadya believes might understand her, but who she feels doesn&#39;t fully.</span></p></li><li><p><strong><span>Nadya&#39;s husband:</span></strong><span> Imprisoned, his fate deeply affects Nadya&#39;s hopes and life choices.</span></p></li></ul><h4 id='summary-8'><span>Summary</span></h4><ul><li><p><span>Nadya cries in bed, deeply upset by her husband&#39;s permanent imprisonment and her roommates&#39; hurtful words.</span></p></li><li><p><span>Shchagov visits Nadya&#39;s dormitory room, engaging in facetious conversation with her and her roommates about dimmed lights and a Party ruling.</span></p></li><li><p><span>Nadya, reacting to Shchagov&#39;s joke about a fine, tears up a ten-ruble note, prompting her roommates Dasha and Muza to leave for the cinema.</span></p></li><li><p><span>Left alone, Shchagov confronts Nadya, holding her hands and then her shoulders, asking why she &quot;keeps throwing fire onto dry hay&quot; with her actions.</span></p></li><li><p><span>Nadya suggests they go out somewhere, but Shchagov refuses, declaring &quot;It&#39;s here or nowhere&quot; and informing her that he is engaged.</span></p></li></ul><h3 id='chapter-52-to-the-resurrection-of-the-dead'><span>Chapter 52 To the Resurrection of the Dead!</span></h3><p><span>The chapter details the growing connection between Nadya and Shchagov, both provincials alienated by Moscow&#39;s elite. It explores Shchagov&#39;s profound war experiences and his struggle with postwar life. Their conversation culminates in Nadya&#39;s revelation about her imprisoned husband, leading to Shchagov&#39;s unexpected act of solidarity.</span></p><h4 id='characters-9'><span>Characters</span></h4><ul><li><p><span>Nadya: A graduate student who, like Shchagov, feels out of place among Moscow&#39;s elite and is concealing a secret about her husband.</span></p></li><li><p><span>Shchagov: A war veteran struggling to navigate postwar civilian life and societal changes, who forms a connection with Nadya.</span></p></li><li><p><span>Gleb: Nadya&#39;s husband, who is revealed to be imprisoned after Nadya initially claimed he was missing in action.</span></p></li></ul><h4 id='summary-9'><span>Summary</span></h4><ul><li><p><span>Nadya and Shchagov are drawn to each other due to their shared provincial background and their sense of alienation from Moscow society.</span></p></li><li><p><span>Shchagov responds to an arrogant student by declaring his origin as &quot;the front line&quot; and &quot;Dugout,&quot; highlighting his war experience.</span></p></li><li><p><span>The text details Shchagov&#39;s four years of intense combat and his subsequent disillusionment with the changed, unequal postwar civilian life.</span></p></li><li><p><span>Shchagov tells Nadya directly that he cannot marry her because he is engaged to a woman who offers him stability and connections.</span></p></li><li><p><span>Nadya then confesses that her husband, Gleb, is not missing but that she saw him &quot;today&quot; and he is &quot;inside&quot; (imprisoned).</span></p></li><li><p><span>Shchagov initially leaves the room after Nadya&#39;s confession, leading her to believe he has abandoned her in her despair.</span></p></li><li><p><span>Shchagov returns shortly thereafter with a bottle and two glasses, proposing they drink &quot;to the resurrection of the dead!&quot;</span></p></li></ul><h3 id='chapter-53-the-ark'><span>Chapter 53 The Ark</span></h3><p><span>Prisoners in the sharashka are forced into a period of &quot;rest&quot; on Sunday evenings due to the free workers&#39; schedule. Despite the harsh conditions and lack of amenities, this time of complete isolation and detachment from the outside world is paradoxically perceived by the inmates as a unique form of freedom and inner liberation. The prison itself is likened to an &quot;ark&quot; floating through an ocean of human destinies.</span></p><h4 id='characters-10'><span>Characters</span></h4><ul><li><p><strong><span>Mamurin:</span></strong><span> A prison authority figure who dislikes empty Sunday evenings and tried to secure work permission for prisoners.</span></p></li><li><p><strong><span>Rubin:</span></strong><span> A prisoner who volunteered to be the prison librarian, hoping to access good books.</span></p></li><li><p><strong><span>Prisoners (zeks):</span></strong><span> The 280 inmates who are forced to rest on Sundays, experiencing a peculiar form of liberty.</span></p></li><li><p><strong><span>Free workers:</span></strong><span> Non-prisoner staff whose Sunday single shift dictates the prisoners&#39; mandatory rest.</span></p></li><li><p><strong><span>Operations officers:</span></strong><span> Prison staff vigilant against contraband and using informers to monitor prisoners.</span></p></li></ul><h4 id='summary-10'><span>Summary</span></h4><ul><li><p><span>Prisoners are forced to stop work at 6:00 P.M. on Sundays, a mandatory interruption due to the free workers&#39; schedule that authorities cannot change.</span></p></li><li><p><span>Mamurin unsuccessfully attempts to secure permission for prisoners to work on Sunday evenings, thwarted by prison authorities&#39; security concerns.</span></p></li><li><p><span>Sunday leisure activities are severely restricted: no exercise, films, or musical instruments are allowed, with even homemade instruments actively sought out by operations officers.</span></p></li><li><p><span>The prison library, with its limited and undesirable collection, is managed by prisoner Rubin, but inmates often seek reading material from female free workers.</span></p></li><li><p><span>During their &quot;rest,&quot; prisoners gain the freedom to lie on beds, move freely, smoke, argue, and use the bathroom without permission, considering this a significant personal liberty.</span></p></li><li><p><span>The prison building is metaphorically described as an &quot;ark,&quot; isolating its occupants from all external events and the usual worries of the world until morning.</span></p></li><li><p><span>Inside the &quot;ark,&quot; prisoners experience a &quot;weightless&quot; existence, detached from worldly concerns, career struggles, or family worries, fostering deep friendship and philosophical thought.</span></p></li></ul><h3 id='chapter-54-leisure-amusements'><span>Chapter 54 Leisure Amusements</span></h3><p><span>The inmates of the sharashka gather for their evening leisure in a communal room, engaging in various activities. Isaak Kagan urges the witty Lev Rubin to entertain the group, and Rubin eventually agrees to stage a mock trial, assigning roles to his fellow prisoners.</span></p><h4 id='characters-11'><span>Characters</span></h4><ul><li><p><strong><span>Isaak Kagan:</span></strong><span> A cautious, money-grubbing zek who manages the accumulator shop and uses cleverness to survive.</span></p></li><li><p><strong><span>Lev Grigorievich Rubin:</span></strong><span> A brilliant zek, talented orator, and inventor with strong Marxist views, who entertains his fellow inmates.</span></p></li><li><p><strong><span>Gleb Nerzhin:</span></strong><span> A zek chosen to be the presiding judge for Rubin&#39;s impromptu mock trial.</span></p></li><li><p><strong><span>Zemelya:</span></strong><span> A zek nicknamed &quot;the vacuum man,&quot; persuaded to serve as an assessor (jury member) for the trial.</span></p></li><li><p><strong><span>Ruska Doronin:</span></strong><span> A zek deeply in love, preoccupied with a gift from Klara, and uninterested in the trial.</span></p></li><li><p><strong><span>Bulatov (Amantai):</span></strong><span> A Tatar zek who volunteers to be the bailiff for the mock trial.</span></p></li><li><p><strong><span>Pryanchikov (Valentulya):</span></strong><span> A zek initially dragged to be the defendant, but then appointed as the official defense counsel.</span></p></li><li><p><strong><span>Potapov:</span></strong><span> A zek who intones scripture from below the judge&#39;s seat during the court proceedings.</span></p></li><li><p><strong><span>Khorobrov:</span></strong><span> A zek barber who comments on the number of jury members needed for the trial.</span></p></li><li><p><strong><span>Spiridon:</span></strong><span> The yardman with a ginger mustache, observing the mock trial from the doorway.</span></p></li><li><p><strong><span>Professor Chelnov:</span></strong><span> A zek with a long, waxy face, also observing the proceedings from the doorway.</span></p></li><li><p><strong><span>Olgovich, Igor Svyatoslavich:</span></strong><span> A historical figure, Prince of Novgorod-Seversk and Putivl, announced as the defendant for the mock trial.</span></p></li></ul><h4 id='summary-11'><span>Summary</span></h4><ul><li><p><span>Twenty-five inmates assemble in the semicircular room at six o&#39;clock, enjoying their leisure time after work.</span></p></li><li><p><span>Isaak Kagan persistently badgered Lev Grigorievich Rubin to provide entertainment, recalling Rubin&#39;s popular &quot;Crow and Fox&quot; skit.</span></p></li><li><p><span>Rubin, initially reluctant due to previous trouble, decides to entertain the group by staging a &quot;modest trial&quot; to begin the evening.</span></p></li><li><p><span>Rubin assigns roles: himself as public prosecutor, Gleb Nerzhin as presiding judge, Zemelya as an assessor, Bulatov as bailiff, and Pryanchikov as defense counsel.</span></p></li><li><p><span>Nerzhin formally opens the &quot;military tribunal of the Marfino sharashka,&quot; and Rubin announces the defendant as &quot;Olgovich, Igor Svyatoslavich, prince of Novgorod-Seversk and Putivl.&quot;</span></p></li></ul><h3 id='chapter-55-prince-igor'><span>Chapter 55 Prince Igor</span></h3><p><span>A group of prisoners in a Soviet gulag hold a mock trial for the historical figure Prince Igor, using Soviet legal and ideological frameworks to accuse him of treason and collaboration with the Polovtsians. The &quot;prosecutors&quot; creatively re-interpret historical accounts and works of art to build a case, mirroring the unjust trials faced by the prisoners themselves.</span></p><h4 id='characters-12'><span>Characters</span></h4><ul><li><p><strong><span>Rubin:</span></strong><span> A prisoner acting as the eloquent chief prosecutor, presenting a detailed, anachronistic indictment against Prince Igor.</span></p></li><li><p><strong><span>Prince Igor Svyatoslavich Olgovich:</span></strong><span> The historical figure on trial, accused of treason, espionage, and collaboration with the Polovtsians.</span></p></li><li><p><strong><span>Nerzhin:</span></strong><span> A prisoner overseeing the mock trial, who encourages the prosecution and its procedural breaches.</span></p></li><li><p><strong><span>Spiridon:</span></strong><span> An older Russian prisoner who identifies with Prince Igor&#39;s plight, recognizing the unfairness of the prosecutor&#39;s arguments.</span></p></li><li><p><strong><span>Isaak Kagan:</span></strong><span> A prisoner who challenges the prosecutor&#39;s anachronisms and later offers a &quot;defense&quot; by suggesting an even more severe, bizarre sentence.</span></p></li><li><p><strong><span>Professor Chelnov:</span></strong><span> A mathematics professor acting as supervisory prosecutor, who provides additional &quot;evidence&quot; of Igor&#39;s long-standing betrayal.</span></p></li><li><p><strong><span>Khan Konchak:</span></strong><span> The Polovtsian leader, presented by the prosecution as Prince Igor&#39;s long-term ally and co-conspirator.</span></p></li></ul><h4 id='summary-12'><span>Summary</span></h4><ul><li><p><span>Rubin, acting as prosecutor, presents a detailed indictment against Prince Igor, accusing him of treason for voluntarily surrendering to Khan Konchak with his army and showing no leadership.</span></p></li><li><p><span>Rubin asserts Igor&#39;s treasonous conduct included being deceived by an eclipse and being selfishly preoccupied with his wife, Yaroslavna, while in &quot;privileged&quot; captivity.</span></p></li><li><p><span>Professor Chelnov supplements the prosecution, revealing Igor&#39;s Polovtsian maternal heritage, his prior alliances with Konchak, and his son Vladimir&#39;s betrothal to Konchak&#39;s daughter, as further proof of long-term betrayal.</span></p></li><li><p><span>Rubin demands a 25-year sentence for Igor, a ban on Borodin&#39;s opera </span><em><span>Prince Igor</span></em><span>, and the arrest or accountability of several historical and artistic figures associated with the story.</span></p></li><li><p><span>Isaak Kagan, initially questioning the prosecutor, later proposes a &quot;defense&quot; that ironically suggests an even harsher, non-existent punishment for Igor: &quot;spiritual castration&quot; and expulsion from the USSR.</span></p></li><li><p><span>The prisoners react with a mix of laughter and a grim recognition of the parallels between the mock trial&#39;s injustices and their own experiences under the Soviet regime.</span></p></li></ul><h3 id='chapter-56-winding-up-the-twentieth'><span>Chapter 56 Winding Up the Twentieth</span></h3><p><span>This chapter focuses on Abramson, an old and cynical political prisoner, who reflects on his past and current imprisonment with indifference, contrasting his &quot;titan&quot; generation with later streams of zeks. He recalls a fervent 1929 exiles&#39; conference before being drawn back to his present by Nerzhin, who invites him to a birthday party and critiques his choice of reading material.</span></p><h4 id='characters-13'><span>Characters</span></h4><ul><li><p><strong><span>Abramson:</span></strong><span> An old, cynical political prisoner and former Trotskyist, indifferent to suffering and political arguments, preferring diverting books.</span></p></li><li><p><strong><span>Chelnov:</span></strong><span> A speaker whose courtroom details briefly piqued Abramson&#39;s interest.</span></p></li><li><p><strong><span>Potapov:</span></strong><span> A fellow prisoner who jokingly called ex-POWs &quot;real live false witnesses&quot; and was with Abramson in Butyrki and Marfino.</span></p></li><li><p><strong><span>Satanevich:</span></strong><span> A leader among the exiles in 1929 who reported on Party policy and was reportedly shot later.</span></p></li><li><p><strong><span>Roza:</span></strong><span> An exile in 1929 from a Kharkov tobacco factory who scorned intellectuals and their &quot;fine distinctions.&quot;</span></p></li><li><p><strong><span>Patrushev:</span></strong><span> A former public prosecutor and exile in 1929 who envisioned a future society where everyone could wear pearls.</span></p></li><li><p><strong><span>Nerzhin:</span></strong><span> A fellow prisoner who invites Abramson to his birthday party and critiques Dumas&#39;s unrealistic prison descriptions.</span></p></li><li><p><strong><span>Rubin:</span></strong><span> A fellow prisoner, close to Abramson and friends with Sologdin.</span></p></li><li><p><strong><span>Sologdin:</span></strong><span> A fellow prisoner, disliked by Abramson, but friends with Rubin.</span></p></li><li><p><strong><span>Pryanchikov:</span></strong><span> A fellow prisoner disliked by Abramson.</span></p></li><li><p><strong><span>Andreich:</span></strong><span> A character who is making artificial cream for the birthday party.</span></p></li></ul><h4 id='summary-13'><span>Summary</span></h4><ul><li><p><span>Abramson, a veteran political prisoner reading </span><em><span>The Count of Monte Cristo</span></em><span>, shows indifference to a current &quot;mock trial&quot; and views the ex-POW stream as less significant than his own sacrificing generation.</span></p></li><li><p><span>He recalls a 1929 conference of exiles in extreme cold on the Yenisei, where they intensely debated Party policy, drank moonshine, and argued about the future of society.</span></p></li><li><p><span>After his initial ten-year sentence, Abramson was briefly released and reunited with his family before being re-arrested and sentenced to another decade for the same past offenses.</span></p></li><li><p><span>Abramson reunites with Nerzhin and Potapov in the Marfino sharashka, feeling that his life as a free man was merely a cruel dream and prison his only concrete reality.</span></p></li><li><p><span>Nerzhin invites a reluctant Abramson to his birthday party, which Abramson accepts, anticipating another futile political argument.</span></p></li><li><p><span>Nerzhin critiques Abramson&#39;s book, </span><em><span>The Count of Monte Cristo</span></em><span>, stating its portrayal of prison is unrealistic due to a lack of security procedures compared to real-world prisons.</span></p></li></ul></div></div>
+</body>
+</html>
