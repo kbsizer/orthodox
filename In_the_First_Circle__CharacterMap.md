@@ -14,7 +14,7 @@ The novel depicts the lives of the occupants of a [sharashka](https://en.wikiped
 
 The title is an allusion to [Dante](https://en.wikipedia.org/wiki/Dante)'s [first circle](https://en.wikipedia.org/wiki/First_circle_of_hell), or [limbo](https://en.wikipedia.org/wiki/Limbo) of Hell in *[The Divine Comedy](https://en.wikipedia.org/wiki/The_Divine_Comedy)*, wherein the philosophers of Greece, and other [virtuous pagans](https://en.wikipedia.org/wiki/Virtuous_pagan), live in a walled green garden. They are unable to enter Heaven, as they were born before Christ, but enjoy a small space of relative freedom in the heart of Hell.
 
-## Character Map
+## Character Map (work in progress)
 
 Source: [In the First Circle (Kindle)](https://read.amazon.com/?asin=B006IDG3Y0) > Cast of Characters
 
@@ -98,7 +98,8 @@ graph TD
 
 Add the girl Yakonov was engaged to: Agnia 
 
-## Chapter Summaries
+## Chapter Summaries: 1-20
+
 ### Chapter 1 - Torpedo
 ### Chapter 2 - A Miscue
 ### Chapter 3 - Sharashka
@@ -124,6 +125,8 @@ Characters: Joseph **Stalin**
 
 * L-O-N-G!
 * Stalin's view of events through his rise to power
+
+## Chapter Summaries: 21-40
 
 ### Chapter 21 - Give Us Back the Death Penalty!
 
@@ -475,6 +478,8 @@ A tense and bittersweet meeting between Gleb Nerzhin, a prisoner, and his wife N
 *   Gleb urgently tells Nadya not to expect his release after his nominal sentence, warning her to prepare for a much longer, indefinite term and life in remote settlements.
 *   Nadya reacts with terror to Gleb's bleak prediction, declaring her refusal to believe it and her unwavering devotion.
 *   As time runs out, Gleb quickly asks Nadya to contact Sologdin's wife and convey a message of love, before sharing a final, tender kiss with Nadya, despite the guard's protest.
+
+## Chapter Summaries: 41-60
 
 ### Chapter 41 And Another One
 
@@ -952,6 +957,8 @@ Shchagov, a former soldier, attends a party at Public Prosecutor Makarygin's hom
 *   His mother's "Ethical Notes" and "old-fashioned" values, emphasizing pity and justice, deeply challenge Innokenty's ingrained Soviet worldview and prompt him to avidly read and question history.
 *   Innokenty begins to find his diplomatic job sordid and becomes aware of a new "law: that we are given only one conscience, too," leading to a profound sense of estrangement from his old life.
 
+## Chapter Summaries: 61-80
+
 ### Chapter 61 The Uncle at Tver
 
 Innokenty visits his impoverished Uncle Avenir in Tver, finding a man full of spirited dissent despite his simple life. They spend the day and night discussing Soviet history, politics, and personal integrity, culminating in a stark revelation about Innokenty's father's role in the 1917 revolution.
@@ -1118,3 +1125,4 @@ Nerzhin patiently cultivates a relationship with Spiridon, a simple peasant pris
 
 
 
+## Chapter Summaries: 81-96
