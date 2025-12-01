@@ -1,4 +1,4 @@
-<div style="text-align: right">Last updated: 2025-11-22<br>added more chapter summaries</div>
+<div style="text-align: right">Last updated: 2025-12-01<br>added more chapter summaries</div>
 
 #  Aleksandr Solzhenitsyn, In the First Circle
 
@@ -541,6 +541,12 @@ Major General Pyotr Makarygin, a prosecutor of "special cases," and his three da
 *   Klara is unable to forget the woman's face or the moment, developing a superstitious habit of hugging the banisters when passing that spot.
 *   Klara eventually confides in her brother-in-law, Innokenty, about the encounter, and he understands completely, forming a bond between them.
 
+
+
+------
+
+
+
 ### Chapter 44 Out in the Open
 
 Klara and her brother-in-law, Innokenty, embark on a secret day trip to the countryside, during which Innokenty reveals his deep disillusionment with Soviet society and his personal unhappiness. Their journey takes them through a poignant landscape, including a forgotten cemetery and a decaying village church, culminating in Innokenty expressing his despair about the division between Russia and the rest of humanity. The chapter concludes with Klara's successful clearance by the Special Section, leading to her entry into the Marfino complex.
@@ -839,3 +845,276 @@ This chapter focuses on Abramson, an old and cynical political prisoner, who ref
 *   Abramson reunites with Nerzhin and Potapov in the Marfino sharashka, feeling that his life as a free man was merely a cruel dream and prison his only concrete reality.
 *   Nerzhin invites a reluctant Abramson to his birthday party, which Abramson accepts, anticipating another futile political argument.
 *   Nerzhin critiques Abramson's book, *The Count of Monte Cristo*, stating its portrayal of prison is unrealistic due to a lack of security procedures compared to real-world prisons.
+
+
+
+------
+
+
+
+### Chapter 57 Prisoners' Petty Matters
+
+A chapter depicting the varied daily life in a Soviet prison, illustrating how prisoners engage in mundane tasks, share anecdotes, and debate philosophical and trivial topics to cope with their confinement. It highlights their individual characters, coping mechanisms, and the unique atmosphere of the sharashka.
+
+#### Characters
+
+*   **Nerzhin**: Helps Potapov make a cream dessert.
+*   **Potapov**: An engineer and expert cook, highly values the act of eating, makes desserts from scarce ingredients.
+*   **Rubin**: Shares parcels from home, later seeks refuge in his dictionaries from prison debates.
+*   **Zemelya**: "The vacuum man" who narrates a story about the symbolic loss of small change in Soviet society.
+*   **Dvoetyosov**: An outspoken prisoner who harshly criticizes those reading Gorky and humanists.
+*   **Pryanchikov**: Playfully predicts the Americans will reach the moon before the Soviets.
+*   **Engraver**: An elated writer who discusses his stories and makes a comparison between Russian and German women.
+*   **Sologdin**: Listens to the engraver, feeling superior and anticipating his own release.
+*   **Electrical Engineer**: Expresses a radical vision of socialism where managerial roles are considered shameful.
+
+#### Summary
+
+*   Potapov, with Nerzhin's help, meticulously prepares a dessert from scarce ingredients in their cramped prison living space.
+*   Zemelya recounts a story about the gradual disappearance of half-kopecks and other small change, linking it to a decline in respect for individuals.
+*   A heated debate erupts over a Gorky story about a revolutionary's successful hunger strike, prompting Dvoetyosov to scorn humanists.
+*   Prisoners engage in a long-standing philosophical discussion about whether it is better to be imprisoned young or old, concluding there is "never a good time."
+*   A mundane argument between a turner and an electrician about Sestroretsk stoves escalates into personal insults, requiring an outside arbitrator.
+*   Pryanchikov interjects into Khorobrov's vision of Soviet moon travel to playfully assert that Americans will get there first.
+*   The engraver, buoyed by his writing and his wife's support, shares with Sologdin his comparison of German and Russian women.
+*   An electrical engineer forcefully shares his vision of a true socialist society where state officials feel shame for their positions.
+
+### Chapter 58 A Banquet of Friends
+
+In a makeshift birthday banquet for Nerzhin within a cramped prison compartment, seven men share meager provisions and engage in profound philosophical debates. The discussions range from the nature of loyalty and equality to the purpose of art and the concept of objectivity, revealing the prisoners' diverse perspectives and intellectual resilience amidst their confinement.
+
+#### Characters
+
+*   **Nerzhin:** The birthday celebrant who toasts prison friendship and wives, and engages in debates about equality and art.
+*   **Sologdin:** Reclines picturesquely, suggests remembering past banquets, and passionately argues against the concept of equality.
+*   **Rubin:** Skeptical of sentimentality and Sologdin's "gentlemen," but debates vigorously on equality and appreciates Kondrashov's artistic views.
+*   **Potapov:** The pragmatic host who manages the banquet's flow and later proposes reconstructing a collaborative story, "The Buddha's Smile."
+*   **Abramson:** Observes the discussions, offers remarks about freedom and songs, and finds Rubin's German partying "weird."
+*   **Kondrashov-Ivanov:** An artist who vehemently advocates for art to transcend mere copying and depict deeper, often unrevealed, qualities.
+*   **Pryanchikov:** Witty and eager, he shares a story of betrayal by a friend after their escape from a Nazi concentration camp.
+
+#### Summary
+
+*   Seven prisoners hold a makeshift birthday banquet for Nerzhin in their confined prison compartment, sharing improvised food and a diluted alcoholic drink.
+*   Sologdin initiates a discussion by asking when each man last sat at a "real banquet," defined by tablecloths, decanters, and elegant women.
+*   Nerzhin deviates from tradition, toasting to the friendship found in prison vaults and to their wives who voluntarily share their burden.
+*   A lively debate ensues about the equality of men and women, with Sologdin dismissing natural equality and Rubin citing "biological impossibility" regarding fidelity.
+*   Pryanchikov recounts a story of betrayal by a close friend after they escaped a Nazi camp, leading to recollections of deceptive repatriation booklets.
+*   Kondrashov argues that art should not merely copy nature but reveal deeper spiritual qualities, proudly declaring himself "unobjective" in his pursuit of truth.
+*   Potapov proposes reconstructing "The Buddha's Smile," a story he co-authored with Gleb in another prison, to the enjoyment of the company.
+
+### Chapter 59 The Buddha's Smile
+
+*The Buddha's Smile* details a surreal and elaborate deception within the Soviet Butyrki Prison to mislead a foreign dignitary, Mrs. Roosevelt. One cell is temporarily transformed into a luxurious space, and its inmates are groomed and coached to present a false image of humane conditions. After the visit, everything is immediately reverted to its original squalid state.
+
+#### Characters
+
+*   **Prisoners (Zeks):** Inmates of Butyrki's Cell 72, forced to participate in a staged show of comfort and well-being for a foreign dignitary.
+*   **Captain (white-gloved):** An agitated officer overseeing the swift transformation and staging of Cell 72 and its inhabitants.
+*   **Major General:** The prison governor, who confidently orchestrates the deception and offers misleading explanations to the visitor.
+*   **Mrs. Roosevelt:** A progressive American visitor, widow of the president, who tours Butyrki Prison to investigate human rights and aid distribution.
+*   **Russian Orthodox Priest:** An individual who appears in the cell during the visit, pretending to make a routine pastoral call to one of the prisoners.
+*   **Ingenious Zek:** A prisoner who takes the new allowance to write memoirs literally, drafting chapters about torture, leading to his swift punishment.
+
+#### Summary
+
+*   The text describes Butyrki Prison as an overcrowded and squalid institution, where prisoners live in harsh, unhygienic conditions with up to 75 inmates per cell.
+*   Twenty-five prisoners from Cell 72 are abruptly removed, sent to a lavish bathhouse, groomed, dressed in new clothes, and given ample food.
+*   Simultaneously, Cell 72 undergoes a miraculous overnight transformation, becoming clean, bright, and equipped with comfortable beds, books, and religious icons.
+*   Mrs. Roosevelt and her retinue visit the meticulously staged cell, where prisoners, under threat, present a false image of well-being, freedom, and even protest American racial issues.
+*   During a staged meal, the prisoners display their instinctual, rapid eating habits, which the major general falsely explains as "Russian national custom."
+*   Immediately after the guests depart, the charade is dismantled: prisoners are stripped, shorn, and returned to their now-squalid Cell 72.
+*   One prisoner who wrote memoirs about torture is promptly booked for "libeling the Organs of State Security," while only a small, smiling Buddha bust in a niche is forgotten and left behind in the reverted cell.
+
+### Chapter 60 But We Are Given Only One Conscience Too
+
+Shchagov, a former soldier, attends a party at Public Prosecutor Makarygin's home, aiming to pursue his fiancΘe and enjoy the abundant food. Simultaneously, Innokenty Volodin, Makarygin's son-in-law, makes a reluctant phone call to his wife, unaware it's being recorded due to his suspicious activities. The narrative delves into Innokenty's profound moral crisis, sparked by the discovery of his deceased mother's diaries, which challenge his worldview and lead him to question his life's values and career.
+
+#### Characters
+
+*   **Shchagov:** A former soldier, attending a party at Public Prosecutor Makarygin's home.
+*   **Erik Saunkin-Golovanov:** Shchagov's army friend, who secured his invitation to the party.
+*   **Public Prosecutor Makarygin:** Host of the party, celebrating an award, and father to Klara and Dotnara.
+*   **Klara:** Makarygin's daughter, who welcomes Shchagov and fields a call from Innokenty.
+*   **Dotnara (Dotty):** Makarygin's daughter and Innokenty's wife, a strikingly handsome woman married to a diplomat.
+*   **Innokenty Volodin:** Makarygin's son-in-law, a diplomat experiencing a moral and existential crisis.
+*   **Rubin:** An individual who ordered the recording of Innokenty's telephone calls.
+*   **Innokenty's Mother:** Deceased; her old letters and diaries reveal her true life and spark Innokenty's self-reflection.
+*   **Innokenty's Father:** A heroic naval officer who died in 1921, whose legacy Innokenty once admired.
+
+#### Summary
+
+*   Shchagov prepares for a party by donning his dress uniform and sets out for Public Prosecutor Makarygin's home, hoping to press his suit with his fiancΘe and enjoy the lavish food.
+*   Innokenty Volodin, feeling agitated and fearful after a previous call, reluctantly phones his wife Dotnara to beg off attending her father's party.
+*   Unbeknownst to Innokenty, his telephone call is being secretly recorded by the Ministry of State Security, initiated by Rubin, to capture his "individual speech pattern."
+*   Innokenty reflects on his deteriorating marriage to Dotnara, realizing their once hedonistic lifestyle had palled on him, leading to emotional detachment.
+*   While searching for a book, Innokenty discovers his deceased mother's old letters and diaries, which reveal her secret lifelong love and a rich personal world he had never known.
+*   His mother's "Ethical Notes" and "old-fashioned" values, emphasizing pity and justice, deeply challenge Innokenty's ingrained Soviet worldview and prompt him to avidly read and question history.
+*   Innokenty begins to find his diplomatic job sordid and becomes aware of a new "law: that we are given only one conscience, too," leading to a profound sense of estrangement from his old life.
+
+### Chapter 61 The Uncle at Tver
+
+Innokenty visits his impoverished Uncle Avenir in Tver, finding a man full of spirited dissent despite his simple life. They spend the day and night discussing Soviet history, politics, and personal integrity, culminating in a stark revelation about Innokenty's father's role in the 1917 revolution.
+
+#### Characters
+
+*   **Innokenty:** The nephew who travels to Tver to visit his uncle, seeking answers and understanding.
+*   **Uncle Avenir:** Innokenty's lean, elderly uncle living in Tver, who holds strong anti-regime views and meticulously preserves historical newspapers.
+*   **Raisa Timofeevna:** Uncle Avenir's practical and severe housekeeper, a hospital nurse who tolerates his eccentric intellectual pursuits.
+
+#### Summary
+
+*   Innokenty arrives at Uncle Avenir's small, dilapidated house in Tver and helps him carry heavy water buckets inside.
+*   Uncle Avenir shows Innokenty his well-tended yard and expresses his philosophy of honest work, criticizing "the leading class" and state jobs.
+*   Raisa Timofeevna joins them for dinner and shares her exasperation with Uncle Avenir's habit of buying newspapers and writing furious, unsent replies to articles.
+*   After Raisa goes to bed, Uncle Avenir reveals his collection of old newspapers, carefully preserved on the walls, and they read historical articles together.
+*   In the dark, Uncle Avenir passionately debunks Soviet narratives, discussing fraudulent promises, the true cost of war, and the illegitimacy of the Second Congress of Soviets.
+*   Uncle Avenir shows Innokenty a copy of Pravda from the October Revolution and recounts his participation in a peaceful demonstration supporting the Constituent Assembly, which was violently dispersed by forces including Innokenty's father.
+*   Uncle Avenir asks Innokenty if he feels the truth of "the sins of the parents are visited on the children" and the need for cleansing, linking it to his father's actions.
+
+### Chapter 62 Two Sons in Law
+
+This chapter describes a dinner party at the Makarygin's, showcasing the hostess Alevtina's social acumen and featuring a lively philosophical debate by son-in-law Innokenty. It culminates in a candid discussion between Innokenty and writer Nikolai Galakhov about the nature of literature and the challenges of creative freedom under Soviet rule.
+
+#### Characters
+
+*   **Public Prosecutor Makarygin:** The host, anxious about appearances and guests, who jokingly reproaches Innokenty for lacking grandchildren.
+*   **Alevtina Nikanorovna:** MakaryginÆs current wife and hostess, adept at acquiring luxuries and managing the complex social dynamics of the party.
+*   **Dushan Radovich:** MakaryginÆs old friend from the Civil War, a former professor, who contributes a detail about Epicurus.
+*   **Major General Slovuta:** A very important prosecutor, recently returned, whose presence dictates the partyÆs formality.
+*   **Innokenty:** A diplomat and MakaryginÆs son-in-law, who passionately defends Epicurus and cynically describes Soviet diplomats.
+*   **Nikolai Galakhov:** A celebrated writer and MakaryginÆs other son-in-law, who debates the purpose of literature and struggles with self-censorship.
+*   **Dotnara ("Dotty"):** Innokenty's wife, who interrupts his conversation with Galakhov, displaying unexpected affection.
+*   **Yermilov:** The imagined "illustrious critic in chief" whose anticipated judgment stifles Galakhov's creative freedom.
+
+#### Summary
+
+*   **Alevtina Nikanorovna hosts a lavish dinner:** She meticulously manages the household and guests, making last-minute social adjustments due to the unexpected arrival of Major General Slovuta.
+*   **Innokenty defends Epicurus:** Despite arriving late, Innokenty passionately argues against the common misconception of Epicureanism, asserting its true meaning to the surprise of the other guests.
+*   **Makarygin invites important guests to his study:** He persuades Slovuta to join him in his study for tobacco, leaving his sons-in-law, Innokenty and Galakhov, to talk.
+*   **Galakhov seeks diplomatic insights from Innokenty:** The writer, planning a play about Soviet diplomats, attempts to interview Innokenty about life in the West and diplomatic routines.
+*   **Innokenty critically discusses literature and Soviet diplomats:** He challenges Galakhov's focus on war themes, questions the purpose of literature, and gives a sarcastic description of Soviet diplomats.
+*   **Galakhov reveals his creative struggles:** He explains how the imagined scrutiny of the influential critic Yermilov forces him to self-censor, making it difficult to write authentically.
+*   **Dotnara interrupts the brothers-in-law's conversation:** Innokenty's wife approaches them, showing an unexpected tenderness that reminds Innokenty of a "dreadful truth" awaiting him.
+
+### Chapter 63 The Diehard
+
+Radovich, a sickly but ideologically steadfast intellectual, spends an evening with General Slovuta and Prosecutor Makarygin, where political dogma, crime statistics, and family tensions are discussed. The conversation exposes the pragmatic cynicism of the Party elite against Radovich's unwavering, almost nostalgic, adherence to Leninist ideals, ultimately leading to an ideological confrontation.
+
+#### Characters
+
+*   **Radovich:** An ailing, intellectual Comintern veteran, whose past misfortunes saved him and who holds firm Leninist ideals.
+*   **Slovuta:** A corpulent general-prosecutor, who discusses biological warfare and crime statistics before leaving.
+*   **Makarygin:** A high-ranking prosecutor and host, concerned with status and family, whose study reflects official ideology.
+*   **Klara:** Makarygin's youngest daughter, rebellious and critical of her father's position and the Party's rhetoric (mentioned in anecdote).
+
+#### Summary
+
+*   Radovich, an ailing Comintern veteran, listens silently as General Slovuta discusses Japanese biological warfare and fabricated crime statistics, before Slovuta departs with a dismissive farewell.
+*   Alone, Radovich finds and skims an "obscene" book, "Tito: Traitor in Chief," which disgusts him with its simplistic justification of coerced confessions, like Lßszl≤ Rajk's.
+*   Upon Makarygin's return, Radovich criticizes the "filthy police provocation" regarding Japanese war crimes and American "Colorado beetles," angering Makarygin for questioning the Party line.
+*   Makarygin, venting his frustration, recounts a recent argument with his rebellious daughter, Klara, who challenged his wealth and the Party's connection to the working class.
+*   Radovich, initially offering an economic justification, ultimately agrees with Klara's criticism of social inequality and the high salaries of officials, further irritating Makarygin.
+*   Makarygin angrily labels Radovich a "diehard" for his insistence on Leninist purity and his favorable mention of workers' control in Yugoslavia, bringing their conversation to a tense ideological standoff.
+*   Radovich, undeterred, concludes by expressing his firm belief in Lenin's prophecy of impending armed conflict between the United States and Britain.
+
+### Chapter 64 Entered Cities First
+
+At a lively party, a young consultant navigates social dynamics while Dinera critiques a new play and a girl desperately petitions for her imprisoned father. Later, a celebrated writer, a veteran, and a war correspondent bond over wartime memories and song, which ironically highlights the distance between their experiences and the actual front-line soldier.
+
+#### Characters
+
+*   **Makarygins:** The hosts of the party, possessing a console record player and a collection of varied records.
+*   **Klara:** A young woman for whom the party was arranged, feeling the event was painful and depressing.
+*   **Vitaly Yevgenievich (the young consultant):** A 24-year-old high-ranking consultant for the Presidium of the Supreme Soviet, with an ambitious demeanor.
+*   **Galakhov:** A famous writer who sees himself as a soldier and strategic commentator, enjoying war reminiscences.
+*   **Dinera:** Galakhov's outspoken wife, who boldly critiques playwrights and critics, including her husband and Golovanov.
+*   **Saunkin-Golovanov (Erik):** A literary critic and former war correspondent, engaging in friendly debates with Dinera and sharing war stories with Shchagov.
+*   **Klara's classmate:** A thin, amiable girl who unsuccessfully petitions Vitaly Yevgenievich for her paralyzed father's pardon from a camp.
+*   **Captain Shchagov:** An army friend of Golovanov, a war veteran who discusses the reality of front-line fear and combat.
+*   **Innokenty:** Dotty's husband, who listens to war stories and reflects on the deeper meaning and inaccuracies of the war correspondent's song.
+*   **Dotty (Dotnara):** Innokenty's wife, content to sit quietly beside him, unaware of future troubles.
+
+#### Summary
+
+*   Guests dance and socialize at the Makarygins' party, which features a high-level young consultant desired as a match for Klara.
+*   Dinera engages Golovanov and the consultant in a lively debate, criticizing a new Vishnevsky play for its lack of character and predictability.
+*   Klara's classmate approaches Vitaly Yevgenievich, attempting to petition for her paralyzed father's pardon from a camp.
+*   Vitaly Yevgenievich dismisses the girl's plea, stating her father was "duly tried and found guilty" and that people die in camps like anywhere else.
+*   Galakhov, Golovanov, and Captain Shchagov bond over shared wartime memories and cognac, exchanging stories from their past.
+*   Shchagov refutes Golovanov's claim about not fearing death, explaining how fear evolves based on different combat experiences.
+*   Galakhov, Dinera, and Golovanov sing "The Song of the Front-Line Correspondents," making Shchagov feel guilty and Innokenty reflect on the song's inaccuracies.
+*   Klara feels depressed and unamused at her own party, reflecting on her fading romantic chances and a recent, dreamlike encounter.
+
+### Chapter 65 A Duel Not by the Rules
+
+Rostislav is lost in the euphoria of a kiss from Klara, while nearby, Sologdin and Rubin engage in a prolonged and heated philosophical debate. Their argument, centered on the nature of science and the three laws of dialectics, escalates until other prisoners demand quiet. Rostislav, meanwhile, secretly plans an elaborate escape to Moscow, where he intends to reunite with Klara.
+
+#### Characters
+
+*   **Rostislav:** A prisoner consumed by happiness from Klara's kiss and meticulously planning a secret escape.
+*   **Sologdin:** A prisoner who enjoys intellectual debate, challenging Marxist ideology and Rubin's understanding of dialectics with persistent questions.
+*   **Rubin:** A prisoner who reluctantly defends Marxist ideology and the laws of dialectics against Sologdin's relentless questioning.
+*   **Klara:** A woman Rostislav loves and plans to meet in Moscow after his escape.
+*   **Potapov:** A prisoner who prioritizes quiet and order, eventually interrupting Sologdin and Rubin's loud argument.
+
+#### Summary
+
+*   Rostislav, in his bunk, revels in the memory of Klara's kiss and contemplates his detailed escape plan to Moscow.
+*   Sologdin and Rubin engage in a long-standing, intense debate about whether Marxism is science and the nature of true science.
+*   Sologdin proposes a formal "duel" debate, where arguments are written alternately on paper, to force clarity and determine a clear victor, which Rubin dismisses as absurd.
+*   Their argument devolves into insults, with Sologdin championing the Middle Ages and Rubin criticizing his "fossil" views on history and revolution.
+*   Sologdin challenges Rubin's understanding of the "three laws of the dialectic," particularly how they show direction of development and the concept of "negation of the negation."
+*   Rubin struggles to provide concrete answers to Sologdin's practical questions about when "negation of the negation" occurs or does not, calling it scholasticism.
+*   Their increasingly loud argument disturbs other sleeping prisoners, leading Potapov to angrily demand they take their debate outside the room, which they do.
+
+### Chapter 66 Going to the People
+
+The text details Nerzhin's journey through various societal ideals to define "the People," moving from romanticized literary notions to intellectual elitism, then to the realities of war and the Gulag. His experiences force him to shed illusions about both the educated and the common folk, ultimately arriving at a deeply personal, spiritual understanding.
+
+#### Characters
+
+*   **Rubin:** A character who believes "the people" is an artificial generalization, with ultimate truth residing in the revolutionary proletariat.
+*   **Sologdin:** A character who views "the people" as formless raw material for history, with superior insight belonging only to rare individuals.
+*   **Nerzhin (Gleb):** The protagonist whose understanding of "the People" evolves significantly through his education, military service, and imprisonment in the Gulag.
+*   **Spiridon:** A yardman, described as Nerzhin's friend, whose acquaintance initially inspired the phrase "going to the people."
+*   **Vasisuali Lokhankin:** A historical or literary figure mentioned as having previously sought "homespun truth" in vain.
+
+#### Summary
+
+*   Rubin and Sologdin dismiss Nerzhin's initial quest for "homespun truth" among common people, each asserting their own distinct views on "the people" as either a class-divided generalization or formless raw material.
+*   Nerzhin's concept of "the People" shifts from a romanticized literary image to valuing an intellectual elite, then to experiencing the indignities of unskilled labor during wartime, followed by a period as an admired artillery officer.
+*   After his arrest, Nerzhin is horrified to find that many highly educated individuals in prison prove to be cowards and traitors, leading him to recoil from them and seek connection with manual laborers.
+*   Imprisoned and forced into labor, Nerzhin learns practical skills for survival but realizes that the common people are not inherently superior in endurance, wisdom, or resourcefulness, often being gullible and prone to trivial favors.
+*   Nerzhin ultimately concludes that membership in "the People" is determined solely by the individual's soul, which each person must forge and temper, and that such individuals often do not prosper in society.
+
+### Chapter 67 Spiridon
+
+Nerzhin patiently cultivates a relationship with Spiridon, a simple peasant prisoner, hoping to understand the "People." Spiridon, initially wary of Nerzhin as an informant, eventually opens up, sharing his extraordinary life story which spans the Russian Revolution, Civil War, collectivization, and World War II, revealing a man driven by instinct, common sense, and profound loyalty to his family.
+
+#### Characters
+
+*   **Spiridon Yegorov:** A roundheaded, seemingly simple peasant prisoner whose life story embodies Russia's turbulent history, driven by self-preservation and devotion to his family.
+*   **Nerzhin (Gleb):** An intellectual prisoner who seeks to understand the "People" through Spiridon, patiently listening to his life story.
+*   **Marfa Ustinovna:** Spiridon's literate and supportive wife, central to his happiness and success.
+*   **Major Shikin:** An operations officer in the sharashka who confiscates Nerzhin's book, inadvertently helping Spiridon trust Nerzhin.
+*   **German Foreman:** A German factory foreman in Mainz who, after losing his son, shows unexpected understanding towards Spiridon's protective actions.
+
+#### Summary
+
+*   Nerzhin cultivates a relationship with Spiridon, who initially sees him as a "wolf" and avoids political talk, but eventually begins to trust him after Nerzhin shares a book of Yesenin's poems which is later confiscated.
+*   Spiridon recounts his early life, including becoming a head of family at fourteen, working in a glassworks, and fighting for both the Whites and Reds during the Civil War.
+*   He returns home, prospers as an "intensifier" during the NEP, but then is made a commissar for collectivization, subsequently jailed for "economic counterrevolution," and later works as a guard in the camps.
+*   Released from prison, Spiridon becomes a successful glassblower at a factory, but during WWII, he evacuates his family, returns to farm, refuses to join partisans until his village is burned, then fights as a partisan.
+*   When his family is evacuated by Germans, Spiridon abandons his partisan post to find them, traveling with them to Germany as a displaced person.
+*   In a German factory, Spiridon threatens a foreman who struck his son, but the foreman, grieving his own son's death, understands Spiridon's actions and does not report him.
+*   Spiridon and his son escape from Alsace during an American bombing raid to rejoin his wife, demonstrating his unwavering common sense and singular focus on his family.
+
+
+
+------
+
+
+
+
+
