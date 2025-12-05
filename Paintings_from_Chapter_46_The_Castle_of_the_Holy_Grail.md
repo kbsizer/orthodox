@@ -1,4 +1,4 @@
-# Gemini AI Generated Images based on 
+Gemini AI Generated Images based on...
 
 # *Chapter 46: The Castle of the Holy Grail*
 

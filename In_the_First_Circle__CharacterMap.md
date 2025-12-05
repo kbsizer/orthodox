@@ -620,6 +620,8 @@ After a challenging visit with his wife, Nerzhin seeks solitude within the shara
 *   Kondrashov-Ivanov passionately argues that an inner essence and a "chivalrous duty" should prevent prison from breaking a man's spirit, contradicting Nerzhin's experience.
 *   The artist then reveals a small, cherished sketch, "The Castle of the Holy Grail," depicting Parsifal's awe-struck first glimpse of the legendary castle.
 
+#### [Renderings of Kondrashov-Ivanov's Paintings](Paintings_from_Chapter_46_The_Castle_of_the_Holy_Grail.html)
+
 ### Chapter 47 Top Secret Conversation
 
 During an exercise break, Rubin secretly approaches Nerzhin to recruit him for a top-secret "phonoscopy" project aimed at identifying an alleged traitor. Their conversation quickly escalates into a profound philosophical debate about socialist ideals, justice, the morality of state actions, and the atomic bomb.
