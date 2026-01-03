@@ -1,0 +1,782 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+.nodeLabel p { padding-right: 2px; padding-left: 2px; }
+.typora-export .nodeLabel p { padding-right: 0px; padding-left: 0px; }
+foreignobject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&amp;subset=latin,latin-ext' type='text/css' />
+<style type='text/css'  id="style-theme_css">/* Ken's Typora Theme 
+ *
+ * Key Features:
+ * 	- Legal Numbering of headings
+ *  - Indentation of headings and text
+ *  - Use of color and strikethrough to contrast complete and incomplete tasks
+ *  - Use of full screen width
+ *  - Table of Contents limited to H2 and H3 only
+ *
+ * Note: Double slash comments (//) are problematic and should be avoided!
+ *
+ *********************************************/
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+/**** Mermaid (work in progress) ****/
+
+.mermaid .label {
+  color: #323D47;
+}
+
+.node text {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px;
+}
+
+/**** Code mode ****/
+
+.cm-s-typora-default {
+  background-color: #fff;
+  color: #040;
+  min-width: 100%;
+}
+
+.cm-s-typora-default .cm-header {
+  background-color: #fff;
+  color: #080;
+  min-width: 100%;
+}
+
+@include-when-export url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Helvetica","Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write{
+    /* max-width: 860px; */
+  	margin: 0 auto;
+  	padding: 20px 30px 40px 30px;
+	padding-top: 20px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+body > *:first-child {
+    margin-top: 0 !important;
+}
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    /*background: url("file:///C://Users//kbsiz//AppData//Roaming//images/modules/styleguide/para.png") no-repeat 10px center;*/
+    text-decoration: none;
+		color: #ff0000 !important;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+}
+
+/**************************************************/
+/** Legal Numbering of headings (starting at H2) **/ 
+/**************************************************/
+
+/** initialize css counter */
+h1 {
+    counter-reset: h2;
+}
+
+h2 {
+    counter-reset: h3;
+}
+
+h3 {
+    counter-reset: h4;
+	margin-left: 30px;
+}
+
+h4 {
+    counter-reset: h5;
+	margin-left: 60px;
+}
+
+h5 {
+    counter-reset: h6;
+	margin-left: 90px;
+}
+
+h6 {
+	margin-left: 120px;
+}
+
+/** put counter result into headings */
+
+#write h2:before {
+    counter-increment: h2;
+    content: counter(h2) ") "
+}
+
+#write h3:before,
+h3.md-focus.md-heading:before /** override the default style for focused headings */ {
+    counter-increment: h3;
+    content: counter(h2) "." counter(h3) ") "
+}
+
+#write h4:before,
+h4.md-focus.md-heading:before {
+    counter-increment: h4;
+    content: counter(h2) "." counter(h3) "." counter(h4) ") "
+}
+
+#write h5:before,
+h5.md-focus.md-heading:before {
+    counter-increment: h5;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ") "
+}
+
+#write h6:before,
+h6.md-focus.md-heading:before {
+    counter-increment: h6;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ") "
+}
+
+/*** override the default style/decorations for focused headings ***/
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    color: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: inherit;
+    left:initial;
+    float: none;
+    top:initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+p,
+ul,
+ol,
+dl,
+table,
+figure {
+	margin-left: 120px;
+	margin-right: 120px;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;	
+}
+
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 4px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+    border-bottom: 1px solid #ddd;
+    margin-left: 120px;
+}
+
+body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+/* BLOCK QUOTES ************************************************/
+
+blockquote {
+    border-left: 4px solid #337;
+    padding: 0 5px;
+    color: #337;
+	margin-left: 120px;
+	margin-right: 30px;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+}
+
+blockquote p {
+	margin-left: 30px;
+}
+
+blockquote blockquote {
+    padding-right: 0;
+}
+
+/*** TABLES ***********************************************/
+
+table {
+    padding: 120px;
+    word-break: initial;
+	width: auto;
+}
+table tr {
+    border-top: 1px solid #cccccc;
+    margin: 0;
+    padding: 0;
+}
+
+/* make rows alternate background color */
+table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+/*** Code Blocks ***********************************************/
+
+.CodeMirror-gutters {
+    border-right: 1px solid #ddd;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;	
+}
+
+.md-fences {
+	margin-left: 120px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 0.2em 1em;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+/* TABLE OF CONTENTS (Show H2 and H3 only) **************************************/
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;	
+	background-color: #eee;
+}
+
+/* .md-toc-h1, .md-toc-h4, .md-toc-h5, .md-toc-h6  {           <-- Use this to include H2 and H3 only */
+.md-toc-h1, .md-toc-h3, .md-toc-h4, .md-toc-h5, .md-toc-h6  {    /* <-- H2 only */
+  display:  none;  
+}
+
+/*** TO-DO TASK LISTS ******************************************/
+
+.task-list-done {    		/* styles for completed tasks */
+	text-decoration: none;   
+	color: #020;				
+}
+.task-list-not-done {		/* styles for incomplete tasks */
+	text-decoration: none; 
+	color: #900;
+}
+/*
+.task-list-item input {
+  top: 0px;    * 3px;  *
+  left: 0px;   * 8px; *
+  right: 0px;      
+}
+*/
+
+/*** MEDIA ******************************************************/
+
+@media screen and (min-width: 914px) {
+    /*body {
+        width: 854px;
+        margin: 0 auto;
+    }*/
+}
+
+/*********************** Work in progress: Trying to reduce HUGE margins when printing */
+@media print {
+    @page { 
+        size: 8.5in 11in; 
+        margin: 0in; 
+        padding: 0in; 
+    }
+
+    html {
+        font-size: 13px;
+    }
+    /* commented out -- causes lonely headings to print on one page, table on next
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    */
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+/*** DISABLE Little blocks in front of current line showing heading level ***
+
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+		color: #FF00FF;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+		color: #FF00FF;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+		color: #FF00FF;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+	color: #FF00FF;
+}
+***************** END DISABLED BLOCK ****************************/
+
+.md-image>.md-meta {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag{
+	color: inherit;
+}
+
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#md-notification:before {
+    top: 10px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+
+<title>summaries_68_through_84</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='in-the-first-circle'><span>In The First Circle</span></h1><h2 id='chapters-68-through-84'><span>Chapters 68 through 84</span></h2><h3 id='chapter-68-spiridons-criterion'><span>Chapter 68 Spiridon’s Criterion</span></h3><p><span>In this chapter, two inmates, Spiridon and Nerzhin, discuss the nature of good and evil while recounting Spiridon&#39;s tragic life story. Spiridon describes his journey from blindness to partial sight, his family&#39;s ill-fated return to the USSR, and his simple, profound criterion for morality amidst immense suffering.</span></p><h4 id='characters'><span>Characters</span></h4><ul><li><p><strong><span>Spiridon (Spiridon Danilych):</span></strong><span> A partially blind peasant inmate who has endured numerous hardships and offers a stark view on life.</span></p></li><li><p><strong><span>Nerzhin (Gleb):</span></strong><span> An intellectual inmate who chain-smokes and attempts to understand Spiridon&#39;s experiences and philosophy.</span></p></li><li><p><strong><span>Marfa Ustinovna:</span></strong><span> Spiridon&#39;s wife, who was deported without trial to the Perm oblast.</span></p></li><li><p><strong><span>Vera:</span></strong><span> Spiridon&#39;s daughter, who insisted on returning to Russia and now works in a lumber camp, causing Spiridon great worry.</span></p></li><li><p><strong><span>Spiridon&#39;s sons:</span></strong><span> Both imprisoned for treason, one with Spiridon and the other in Kolyma.</span></p></li><li><p><strong><span>German doctors:</span></strong><span> Restored some vision to Spiridon&#39;s eye after an accident.</span></p></li><li><p><strong><span>Spiridon&#39;s drinking companion:</span></strong><span> A relative who died after drinking unproofed alcohol with Spiridon.</span></p></li></ul><h4 id='summary'><span>Summary</span></h4><ul><li><p><span>Spiridon and Nerzhin sit under a creaking staircase, where Spiridon details his past while Nerzhin contemplates his friend&#39;s life.</span></p></li><li><p><span>Spiridon recounts becoming blind after drinking unproofed alcohol in an American DP camp, an event that killed his drinking companion, and how German doctors restored partial vision.</span></p></li><li><p><span>Despite Spiridon&#39;s warnings and knowledge of impending imprisonment, his children, particularly his daughter Vera, insisted on returning to Russia.</span></p></li><li><p><span>Upon their return to the Soviet Union, Spiridon&#39;s family was separated: his wife and daughter were deported, and he and his sons were imprisoned for treason.</span></p></li><li><p><span>Spiridon expresses profound anguish and fear for his daughter Vera, who is working in a dangerous lumber camp environment.</span></p></li><li><p><span>Nerzhin asks Spiridon for a &quot;yardstick&quot; to understand right and wrong in life, questioning whether people deliberately do evil or merely make mistakes.</span></p></li><li><p><span>Spiridon offers his &quot;criterion&quot;: &quot;Killing wolves is right; eating people is wrong,&quot; and further expresses a desperate wish for an atomic bomb to end the widespread suffering under the current regime.</span></p></li></ul><h3 id='chapter-69-behind-a-closed-visor'><span>Chapter 69 Behind a Closed Visor</span></h3><p><span>This chapter describes a late-night, intense political and philosophical argument between prisoners Rubin and Sologdin in a special prison. Their heated debate, touching on the Soviet regime, class society, and revolutionary ethics, reveals their fundamental ideological differences.</span></p><h4 id='characters-2'><span>Characters</span></h4><ul><li><p><strong><span>Rubin:</span></strong><span> A Marxist prisoner who adamantly defends the Soviet regime&#39;s ideals and historical actions.</span></p></li><li><p><strong><span>Sologdin:</span></strong><span> A sharp-tongued prisoner who passionately criticizes the Soviet system and its means of power.</span></p></li><li><p><strong><span>Gleb Nerzhin:</span></strong><span> A fellow prisoner who tries to stop Rubin and Sologdin&#39;s dangerously loud argument.</span></p></li><li><p><strong><span>Lieutenant:</span></strong><span> The officer on duty, distracted by a nurse and thus lax in his duties.</span></p></li><li><p><strong><span>Sergeant Major:</span></strong><span> The Lieutenant&#39;s aide, who indifferently carries out the task of getting prisoners to bed.</span></p></li></ul><h4 id='summary-2'><span>Summary</span></h4><ul><li><p><span>The duty Lieutenant, distracted by a nurse, delegates the task of enforcing lights-out to his aide, the Sergeant Major, who performs it indifferently.</span></p></li><li><p><span>Rubin and Sologdin continue a fierce, unresolvable argument in the prison hallway, debating deeply about the Soviet system.</span></p></li><li><p><span>They dispute the existence of a new ruling class, the justification of &quot;the end justifies the means,&quot; and the true nature of the Russian Revolution.</span></p></li><li><p><span>Gleb Nerzhin twice intervenes, using a code phrase to warn them about informers, but the debaters are too engrossed to heed him.</span></p></li><li><p><span>The argument devolves into personal accusations, as they hurl past grievances and vulnerabilities at each other.</span></p></li><li><p><span>Sologdin admits he joined the Komsomol out of necessity for education, prompting Rubin to infer a potential betrayal in war.</span></p></li><li><p><span>The argument ends with Rubin resolving to expose an anonymous miscreant to &quot;save the atomic bomb for the Revolution,&quot; and Sologdin determining to hinder the regime.</span></p></li></ul><h3 id='chapter-70-dotty'><span>Chapter 70 Dotty</span></h3><p><span>Innokenty and Dotty return home by taxi, where Innokenty struggles with his conflicted feelings for his wife while fearing an imminent threat. Upon safely entering their apartment, Dotty expresses her pain, and their renewed intimacy ultimately provides Innokenty with a profound, temporary escape from his anxieties.</span></p><h4 id='characters-3'><span>Characters</span></h4><ul><li><p><strong><span>Innokenty:</span></strong><span> A man returning home, deeply anxious about an unseen threat but also drawn to his wife despite his reservations.</span></p></li><li><p><strong><span>Dotty:</span></strong><span> Innokenty&#39;s wife, who prattles freely, then later reveals her pain and offers him physical and emotional comfort.</span></p></li></ul><h4 id='summary-3'><span>Summary</span></h4><ul><li><p><span>Innokenty and Dotty return home by taxi, with Innokenty feeling a mixture of attraction and internal conflict towards his wife.</span></p></li><li><p><span>Innokenty contemplates the physical and emotional allure of Dotty while also wrestling with the humiliation he feels due to her past.</span></p></li><li><p><span>He experiences intense paranoia about an ambush awaiting them at their apartment, envisioning attackers inside.</span></p></li><li><p><span>Upon entering their apartment, they find no ambush, leading Innokenty to feel a sense of security, which he shares with Dotty.</span></p></li><li><p><span>Dotty asks Innokenty to beat her, stating she is &quot;crude when I&#39;m hurting badly,&quot; but he gently declines her request.</span></p></li><li><p><span>Dotty insists she can make him feel better, leading Innokenty to passionately kiss her.</span></p></li><li><p><span>They remain entwined, with Innokenty finding immense emotional comfort and bliss in Dotty&#39;s presence, overriding his previous dread.</span></p></li></ul><h3 id='chapter-71-lets-agree-that-this-didnt-happen'><span>Chapter 71 Let’s Agree That This Didn’t Happen</span></h3><p><span>This chapter depicts Rubin&#39;s agonizing, sleepless night in prison, tormented by physical pain and a flood of past memories. He reflects on his unwavering defense of socialism and the deep personal compromises and brutal actions he made for the Party, leading to profound guilt and a desire for absolution.</span></p><h4 id='characters-4'><span>Characters</span></h4><ul><li><p><span>Rubin: A prisoner suffering acute physical pain and psychological torment during a sleepless night.</span></p></li><li><p><span>Mamurin: A &quot;has-been&quot; prisoner, mentioned as being asleep in his solitary cell.</span></p></li><li><p><span>Lieutenant with two tabs of mustache: An officer sleeping with the female medical orderly in the sickbay.</span></p></li><li><p><span>Female medical orderly: On duty but asleep with the lieutenant, making her unavailable.</span></p></li><li><p><span>Guard on main stairway (dim screw): A sleepy prison guard stationed at the main iron door, repeatedly woken by Rubin.</span></p></li><li><p><span>Rubin&#39;s cousin: A relative whom young Lev idolized and later, under pressure, informed on regarding his Trotskyist ties.</span></p></li><li><p><span>Comrade Pakhtina: A Party official at the tractor plant who interrogated young Lev about his cousin.</span></p></li><li><p><span>GPU investigating officer: A polite stranger who obtained young Lev&#39;s signed confession about his cousin.</span></p></li><li><p><span>Sergeant major: The superior officer who was woken by the guard but refused to take action regarding Rubin&#39;s condition.</span></p></li></ul><h4 id='summary-4'><span>Summary</span></h4><ul><li><p><span>Rubin, suffering severe pain, leaves his cell during a general sleep to pace the hallway and seek medical help from the guard.</span></p></li><li><p><span>He recalls his first arrest at 16 for hiding type, his defiance, and an inspiring prison uprising where inmates sang the &quot;Internationale.&quot;</span></p></li><li><p><span>Rubin remembers being interrogated by Party officials and a GPU investigator, leading him to confess details about his cousin&#39;s past Trotskyist activities.</span></p></li><li><p><span>The guard&#39;s attempts to get medical help fail as the orderly is asleep and the sergeant major dismisses Rubin&#39;s urgency until morning.</span></p></li><li><p><span>Rubin, increasingly desperate, threatens a hunger strike to force action, but the guard points out its futility at night.</span></p></li><li><p><span>He is tormented by memories of his brutal role in collectivization, where he enforced starvation and dismissed peasant suffering.</span></p></li><li><p><span>Rubin reflects on his past, wishing to cleanse himself of guilt, and finds a metaphorical parallel in Krylov&#39;s fable of the unappreciated &quot;Damascene Blade.&quot;</span></p></li></ul><h3 id='chapter-72-civic-temples'><span>Chapter 72 Civic Temples</span></h3><p><span>Rubin, a political prisoner, uses a sleepless night to finalize his detailed proposal for &quot;Civic Places of Worship&quot; aimed at restoring moral standards in Soviet society. Despite physical pain and feelings of abandonment, he plans to submit this work anonymously through a friend. Later, seeking medicine for insomnia, he finds a momentary, blissful peace in the snowy night.</span></p><h4 id='characters-5'><span>Characters</span></h4><ul><li><p><strong><span>Rubin:</span></strong><span> A political prisoner who is developing a proposal for &quot;Civic Temples&quot; to combat moral decay in society.</span></p></li><li><p><strong><span>Sologdin:</span></strong><span> (Mentioned) A person whose criticisms of moral decline had a painful grain of truth for Rubin.</span></p></li><li><p><strong><span>Sergeant Major:</span></strong><span> A stocky duty officer&#39;s deputy who escorts Rubin to the medical assistant for his illness.</span></p></li><li><p><strong><span>Medical Assistant:</span></strong><span> A young woman who, after some reluctance, provides Rubin with medicine for his insomnia.</span></p></li></ul><h4 id='summary-5'><span>Summary</span></h4><ul><li><p><span>Rubin reflects on the moral decay of society and spends the night finalizing his &quot;Proposal for the Establishment of Civic Places of Worship.&quot;</span></p></li><li><p><span>He plans to smuggle the proposal out and have an old army friend sign and submit it to the Central Committee, sacrificing his own authorial fame.</span></p></li><li><p><span>The proposal details establishing majestic &quot;Civic Temples&quot; for ceremonies, youth oaths of loyalty, and a corps of &quot;temple attendants.&quot;</span></p></li><li><p><span>Rubin, in pain and feeling abandoned, is eventually escorted by the sergeant major to see the medical assistant for his condition.</span></p></li><li><p><span>While crossing the snow-covered yard, Rubin experiences a brief moment of blissful calm and happiness, feeling strength from the snowy night.</span></p></li><li><p><span>The medical assistant initially resists but provides Rubin with a triple dose of sleep powder after he mentions a morning job for the minister.</span></p></li><li><p><span>Rubin returns, feeling his soul in communion with the world&#39;s freshness as he breathes the snow-scented air and rubs snow on his face.</span></p></li></ul><h3 id='chapter-73-a-circle-of-wrongs'><span>Chapter 73 A Circle of Wrongs</span></h3><p><span>Adam Roitman, a high-ranking state security officer, endures a sleepless night contemplating rising anti-Semitism, his diminished scientific passion, and his own past role in persecuting others. He grapples with the irony of his current situation mirroring his past wrongs, feeling trapped in a &quot;circle of wrongs.&quot;</span></p><h4 id='characters-6'><span>Characters</span></h4><ul><li><p><strong><span>Adam Roitman:</span></strong><span> A major in State Security and Stalin Prize winner, anxious about his Jewish identity and career.</span></p></li><li><p><strong><span>Adam&#39;s wife:</span></strong><span> Sleeps beside him, offering tender comfort in his troubled state.</span></p></li><li><p><strong><span>Adam&#39;s son:</span></strong><span> Their three-year-old child, who sleeps in the dining room and is a source of pride.</span></p></li><li><p><strong><span>Roitman&#39;s old friend:</span></strong><span> A Jewish friend who visited to report increasing anti-Jewish harassment and discrimination.</span></p></li><li><p><strong><span>Yakonov:</span></strong><span> A colleague Adam once actively worked to discredit, who now denounces &quot;cosmopolitanism.&quot;</span></p></li><li><p><strong><span>Markushev:</span></strong><span> A prisoner whose technical idea leads to a significant organizational change at the institute.</span></p></li><li><p><strong><span>Pryanchikov:</span></strong><span> A colleague, possibly a prisoner, working on technical solutions, who is reassigned to the vocoder unit.</span></p></li><li><p><strong><span>Oleg Rozhdestvensky:</span></strong><span> Adam&#39;s former classmate whom Adam and others publicly denounced as a child.</span></p></li></ul><h4 id='summary-6'><span>Summary</span></h4><ul><li><p><span>Adam Roitman wakes from uneasy sleep, troubled by recent news and work unpleasantness, reflecting on his precarious position as a Jew.</span></p></li><li><p><span>His old Jewish friend visited the previous night, sharing news of increasing state-sponsored harassment and discrimination against Jews.</span></p></li><li><p><span>Roitman laments his transition from a creative scientist to a supervisor, realizing he sacrificed scientific passion for career advancement and politicking against colleagues like Yakonov.</span></p></li><li><p><span>Yakonov, once targeted by Roitman, now actively campaigns against &quot;cosmopolitanism,&quot; a term used to target Jews, further impacting Roitman&#39;s anxieties.</span></p></li><li><p><span>Following a minister&#39;s outburst, a prisoner&#39;s idea leads to a project reorganization, with Yakonov reassigning Pryanchikov and the vocoder unit despite Roitman&#39;s objections.</span></p></li><li><p><span>Adam vividly recalls a childhood incident where he, as a Young Pioneer, publicly denounced his classmate Oleg Rozhdestensky, accusing him of being an &quot;enemy.&quot;</span></p></li><li><p><span>He recognizes the &quot;circle of wrongs,&quot; where his past actions against others now mirror the persecution he faces, leaving him with no clear way out.</span></p></li></ul><h3 id='chapter-74-monday-dawn'><span>Chapter 74 Monday Dawn</span></h3><p><span>A Monday dawn in the sharashka begins with the yardman Spiridon being roused early to clear snow, prompting reflections on his past and family worries. Prisoners during morning exercise discuss the regime&#39;s opportunism and a poignant painting, while a new, restrictive order concerning family communication is introduced.</span></p><h4 id='characters-7'><span>Characters</span></h4><ul><li><p><strong><span>Spiridon Yegorov (yardman):</span></strong><span> A prisoner roused early to clear snow, he dreams of his old horse and worries about his daughter.</span></p></li><li><p><strong><span>Guard:</span></strong><span> The official who wakes Spiridon and later prevents Rubin from going outside for exercise.</span></p></li><li><p><strong><span>Lieutenant (duty officer):</span></strong><span> The mustachioed officer who orders Spiridon to clear snow and later helps deliver the new prison regulations.</span></p></li><li><p><strong><span>Potapov:</span></strong><span> A melancholy former officer who walks with a wounded leg, reflecting on his ruined life during morning exercise.</span></p></li><li><p><strong><span>Khorobrov:</span></strong><span> A cynical prisoner who vents his hatred for the regime&#39;s opportunistic changes in ideology and policies.</span></p></li><li><p><strong><span>Sologdin:</span></strong><span> A prisoner seeking solitude after a recent argument, heading to chop wood.</span></p></li><li><p><strong><span>Gerasimovich:</span></strong><span> A prisoner deeply affected by his wife&#39;s visit, contemplating how to earn remission and shaken by a description of a painting.</span></p></li><li><p><strong><span>Kondrashov-Ivanov:</span></strong><span> An artist prisoner who describes an unseen, remarkable painting titled &quot;Vanishing Russia&quot; to Gerasimovich.</span></p></li><li><p><strong><span>Rubin:</span></strong><span> A prisoner who overslept, desperate for fresh air, but is denied access to the yard and makes do with snow in the hallway.</span></p></li><li><p><strong><span>Lieutenant Zhvakun:</span></strong><span> A dense new lieutenant, formerly a wartime &quot;executioner,&quot; who helps deliver the new, harsh prison orders.</span></p></li></ul><h4 id='summary-7'><span>Summary</span></h4><ul><li><p><span>Spiridon, the yardman, is woken before six by a guard and ordered by the duty lieutenant to clear a large amount of snow that fell overnight.</span></p></li><li><p><span>Spiridon begins his work, prioritizing paths to the kitchen and for fellow prisoners, while reflecting on his past, his horse Grivna, and his worries about his daughter.</span></p></li><li><p><span>During morning exercise, Khorobrov critiques the Bolsheviks&#39; &quot;shameless opportunism,&quot; citing examples of shifting political narratives, while Potapov quietly contemplates his ruined life.</span></p></li><li><p><span>Gerasimovich, still shaken by his wife&#39;s visit, is captivated by Kondrashov-Ivanov&#39;s detailed description of an unseen painting, &quot;Vanishing Russia,&quot; depicting a stream of old Russian people &quot;departing.&quot;</span></p></li><li><p><span>Rubin, having overslept, is prevented from going to the yard for fresh air and instead finds a small patch of snow and a draft in the underground hallway to refresh himself.</span></p></li><li><p><span>Lieutenants Zhvakun and the duty officer announce a new order requiring prisoners to list &quot;immediate relatives&quot; to be eligible for visits and letters, effective January first.</span></p></li><li><p><span>Prisoners react to the restrictive new order with sarcastic &quot;Happy New Year!&quot; remarks and angry questions, which Lieutenant Zhvakun attempts to memorize for reporting.</span></p></li></ul><h3 id='chapter-75-four-nails'><span>Chapter 75 Four Nails</span></h3><p><span>Prisoners are profoundly demoralized by new, draconian regulations severing ties with their families, announced just as institute bosses demand a heroic work spurt. Zek Nerzhin, though inwardly seething with defiance, cleverly feigns enthusiasm during a planning meeting.</span></p><h4 id='characters-8'><span>Characters</span></h4><ul><li><p><strong><span>Zeks:</span></strong><span> General term for prisoners, stunned and demoralized by new regulations.</span></p></li><li><p><strong><span>Klimentiev and Myshin:</span></strong><span> Officials mentioned as asking for lists of relatives from prisoners.</span></p></li><li><p><strong><span>Major Roitman:</span></strong><span> Soft-spoken, shortsighted officer leading the Acoustics Laboratory, unaware of the prison announcement.</span></p></li><li><p><strong><span>Pryanchikov:</span></strong><span> A talented zek, &quot;pearl&quot; of the Acoustics Lab, currently missing from the meeting.</span></p></li><li><p><strong><span>Rubin:</span></strong><span> A zek, currently working with Smolosidov behind a locked door on top-secret work.</span></p></li><li><p><strong><span>Smolosidov:</span></strong><span> A person working with Rubin in a top-secret room.</span></p></li><li><p><strong><span>Simochka:</span></strong><span> A free worker in the Acoustics Lab, absent from the meeting.</span></p></li><li><p><strong><span>Nerzhin (Gleb Vikentich):</span></strong><span> A zek in the Acoustics Lab, deeply affected by the new regulations but outwardly calm and deceptive.</span></p></li></ul><h4 id='summary-8'><span>Summary</span></h4><ul><li><p><strong><span>New regulations announced:</span></strong><span> The prison command announces brutal new rules severely limiting family visits and correspondence, requiring zeks to denounce relatives.</span></p></li><li><p><strong><span>Prisoners&#39; demoralization:</span></strong><span> The zeks are stunned, discussing how the new rules make maintaining contact impossible without endangering their loved ones.</span></p></li><li><p><strong><span>Roitman&#39;s planning meeting:</span></strong><span> Major Roitman, unaware of the prison announcement, convenes a meeting to discuss ambitious plans for a &quot;heroic spurt&quot; of work.</span></p></li><li><p><strong><span>Nerzhin&#39;s internal conflict:</span></strong><span> Nerzhin grapples with the implications of the new rules for his family, feeling a &quot;metalworker&#39;s vise&quot; closing on him, and vows to drive &quot;four nails&quot; into the memory of their torturers.</span></p></li><li><p><strong><span>Nerzhin&#39;s deceptive report:</span></strong><span> When prompted, Nerzhin confidently presents a false, enthusiastic report of fulfilled plans and announces new &quot;socialist obligations&quot; to deceive Roitman.</span></p></li><li><p><strong><span>Meeting concludes:</span></strong><span> The meeting ends, and Roitman quickly leaves to join Rubin and Smolosidov, who are already comparing magnetic tapes for urgent work.</span></p></li></ul><h3 id='chapter-76-favorite-profession'><span>Chapter 76 Favorite Profession</span></h3><p><span>Major Shikin, a senior security officer at the Marfino establishment, reflects on his profound love for his profession, detailing its benefits and his meticulous approach to his duties. His daily routine involves managing various security concerns, but his authority is unexpectedly challenged when he is excluded from a new, high-level prisoner group that includes the defiant prisoner Rubin.</span></p><h4 id='characters-9'><span>Characters</span></h4><ul><li><p><strong><span>Major Shikin:</span></strong><span> A senior security operations officer at Marfino who deeply loves his well-paid, unchallenging, and powerful profession.</span></p></li><li><p><strong><span>Major Myshin:</span></strong><span> Shikin&#39;s counterpart in prison security, who rarely collaborates due to indolence and separate departmental structures.</span></p></li><li><p><strong><span>Rubin:</span></strong><span> A defiant prisoner whom Shikin considers a &quot;double-dealer&quot; for refusing to be an informant, but who is now part of a high-level group.</span></p></li><li><p><strong><span>Lieutenant Smolosidov:</span></strong><span> An officer guarding Room 21, who denies Major Shikin access to Rubin based on a list of authorized personnel.</span></p></li><li><p><strong><span>Confidential Secretary:</span></strong><span> A weak-sighted woman who files Shikin&#39;s papers and with whom he conducts a discreet affair, later discovered by prisoners.</span></p></li><li><p><strong><span>Major General Oskolupov:</span></strong><span> Shikin&#39;s superior who reprimanded him, not for his affair, but for letting prisoners discover it and compromise security.</span></p></li><li><p><strong><span>Engineer Colonel Yakonov:</span></strong><span> A colleague who sanctioned Shikin&#39;s new security measure involving personal secret logbooks for prisoners.</span></p></li></ul><h4 id='summary-9'><span>Summary</span></h4><ul><li><p><span>Major Shikin reflects on his security officer profession, cherishing its perks like good pay, lack of danger, and the feeling of omnipotence and mystery it affords him.</span></p></li><li><p><span>Shikin introduces a new security innovation requiring prisoners to keep secret logbooks, allowing inspection of their thought processes and ensuring all work is secured.</span></p></li><li><p><span>An incident involving 150 rubles found on a staircase, which Shikin hoped would expose a rule-breaker, goes unclaimed and is eventually given to his confidential secretary.</span></p></li><li><p><span>Shikin&#39;s affair with his confidential secretary is discovered by prisoners, leading to a reprimand from Major General Oskolupov for a security lapse, not the liaison itself.</span></p></li><li><p><span>Arriving at work, Shikin mentally outlines a demanding day, including reviewing his logbook innovation, completing prisoner transfers, and investigating several ongoing cases.</span></p></li><li><p><span>Shikin learns from a duty officer that a new, important prisoner group, including the defiant Rubin, was formed over the weekend without his presence or knowledge.</span></p></li><li><p><span>Shikin attempts to speak with Rubin in Room 21 but is denied entry by Lieutenant Smolosidov, who presents an official list of authorized personnel that excludes Shikin.</span></p></li></ul><h3 id='chapter-77-the-decision-taken'><span>Chapter 77 The Decision Taken</span></h3><p><span>Sologdin, an exceptionally able prisoner, makes the final decision to destroy his life&#39;s work, an encoder design, to avoid collaborating with the oppressive prison system. He meticulously carries out the secret destruction of his drawings, navigating obstacles and paranoia, before resuming his mundane prison tasks.</span></p><h4 id='characters-10'><span>Characters</span></h4><ul><li><p><strong><span>Sologdin (Dmitri Aleksandrovich):</span></strong><span> An intelligent prisoner who decides to destroy his life&#39;s work, an encoder design, rather than cooperate with the prison system.</span></p></li><li><p><strong><span>Rubin (Lev/Lyovka):</span></strong><span> A fellow prisoner whose previous debate with Sologdin continues to influence Sologdin&#39;s thoughts on his decision.</span></p></li><li><p><strong><span>Larisa:</span></strong><span> A colleague in the design office who admires Sologdin and observes his actions with puzzled anxiety.</span></p></li><li><p><strong><span>Yemina:</span></strong><span> An office assistant Sologdin dispatches on an errand to the engineering shops.</span></p></li><li><p><strong><span>Office girl:</span></strong><span> Collects discarded drawings from designers for destruction.</span></p></li><li><p><strong><span>Lieutenant Colonel:</span></strong><span> The head of the design office who leads a meeting and later summons Sologdin about an overdue drawing.</span></p></li><li><p><strong><span>Tyunyukin:</span></strong><span> A &quot;notorious stoolie&quot; Sologdin encounters in the bathroom while attempting to burn his drawings.</span></p></li></ul><h4 id='summary-10'><span>Summary</span></h4><ul><li><p><strong><span>Sologdin reviews and confirms his decision:</span></strong><span> He spends the morning reflecting on his debate with Rubin and affirms his choice to destroy his invention for noble means.</span></p></li><li><p><strong><span>He discards his main design drawing:</span></strong><span> Sologdin boldly marks through his encoder circuit drawing and hands it to the office girl as part of a stack of papers for destruction.</span></p></li><li><p><strong><span>Sologdin reclaims and further mutilates the drawing:</span></strong><span> Fueled by paranoia during a meeting, he retrieves the &quot;mistaken&quot; sheet and secretly cuts it into sixteen small pieces at his desk.</span></p></li><li><p><strong><span>He attempts to burn the scraps in the bathroom:</span></strong><span> Sologdin hides the pieces in his overalls and goes to a bathroom stall, struggling with faulty matches to ignite the thick drawing paper.</span></p></li><li><p><strong><span>Sologdin successfully burns most of the papers:</span></strong><span> Despite interruptions from others entering the bathroom, he manages to burn the bulk of the scraps and flushes the ashes away.</span></p></li><li><p><strong><span>He meticulously destroys the last vital piece:</span></strong><span> Realizing one remaining scrap holds the &quot;heart of his design,&quot; he patiently tears it into minuscule fragments before flushing it and leaving.</span></p></li><li><p><strong><span>Sologdin is summoned about an overdue task:</span></strong><span> He is called by the Lieutenant Colonel about an unstarted drawing for two brackets, which Sologdin promises to finish within an hour.</span></p></li></ul><h3 id='chapter-78-the-professional-party-secretary'><span>Chapter 78 The Professional Party Secretary</span></h3><p><span>The text describes the Marfino Institute&#39;s transition from a suppressed trade union to a strengthened Party organization under the new full-time secretary, Stepanov. It details Stepanov&#39;s rigid, bureaucratic approach to Party work and his unwavering adherence to directives, even as he faces a new, ominous campaign against &quot;the Hebrews.&quot; His struggles highlight the oppressive and unpredictable nature of Party policy.</span></p><h4 id='characters-11'><span>Characters</span></h4><ul><li><p><strong><span>Stepanov, Boris Sergeevich:</span></strong><span> The new, full-time Party secretary at Marfino, a rigid bureaucrat dedicated to strict adherence to Party line and documentation.</span></p></li><li><p><strong><span>Lieutenant Klykachev:</span></strong><span> Stepanov&#39;s predecessor and later &quot;right-hand man,&quot; known for being a &quot;nitpicker&quot; but neglecting proper Party documentation.</span></p></li><li><p><strong><span>Important senior comrade:</span></strong><span> A high-ranking official who subtly initiates a concerning new campaign by asking Stepanov about &quot;the Hebrews.&quot;</span></p></li><li><p><strong><span>Stepanov&#39;s sons:</span></strong><span> Three history graduates who struggle to find employment, increasing Stepanov&#39;s financial concerns and job tenacity.</span></p></li><li><p><strong><span>Roitman:</span></strong><span> A colleague who sarcastically describes Stepanov as &quot;the prophet of the bottomless inkwell,&quot; characterizing his bureaucratic nature.</span></p></li></ul><h4 id='summary-11'><span>Summary</span></h4><ul><li><p><strong><span>Marfino&#39;s trade union is suppressed:</span></strong><span> A high-ranking Moscow Party official, fearing &quot;Trotskyism&quot; in a military establishment, orders the union&#39;s immediate abolition.</span></p></li><li><p><strong><span>Stepanov is appointed full-time Party secretary:</span></strong><span> The Party Oblast Committee recommends Stepanov, a veteran Party worker, and the Marfino organization enthusiastically elects him.</span></p></li><li><p><strong><span>Stepanov establishes strict bureaucratic control:</span></strong><span> He critiques his predecessor Klykachev for insufficient documentation, declaring &quot;You can&#39;t file the spoken word,&quot; and demands written proof for all activities.</span></p></li><li><p><strong><span>Stepanov conducts rigid Party meetings:</span></strong><span> He orchestrates &quot;voluntary-compulsory&quot; meetings where individuals are criticized and resolutions passed unanimously, even if not fully drafted.</span></p></li><li><p><strong><span>Stepanov receives an unsettling inquiry:</span></strong><span> An important senior comrade abruptly asks him about &quot;the Hebrews,&quot; leaving Stepanov anxious about a new, undefined Party campaign.</span></p></li><li><p><strong><span>Stepanov receives new directives:</span></strong><span> He learns he must organize a lecture on &quot;Dialectical Materialism&quot; and will receive guidelines for a campaign against &quot;kowtowing to foreign countries.&quot;</span></p></li></ul><h3 id='chapter-79-the-decision-explained'><span>Chapter 79 The Decision Explained</span></h3><p><span>Engineer Colonel Yakonov, facing a critical deadline, endures a meeting with the despised Major Shikin. His personal crisis escalates during a tense confrontation with prisoner-engineer Sologdin, who reveals he destroyed a vital design. Yakonov secures Sologdin&#39;s help under specific conditions, only to be immediately confronted with a new political challenge from Party organizer Stepanov.</span></p><h4 id='characters-12'><span>Characters</span></h4><ul><li><p><strong><span>Engineer Colonel Yakonov:</span></strong><span> A high-ranking officer under pressure and a one-month deadline, he secretly despises his subordinates and values his private life.</span></p></li><li><p><strong><span>Major Shikin:</span></strong><span> A diligent but disliked major who resents Yakonov, emphasizing his own importance and pushing for zek relegations.</span></p></li><li><p><strong><span>Dmitri Aleksandrovich Sologdin:</span></strong><span> A brilliant and defiant prisoner-engineer who intentionally destroyed a crucial design, holding leverage over Yakonov.</span></p></li><li><p><strong><span>Stepanov:</span></strong><span> A Party organizer who announces a political rectification campaign against &quot;homeless cosmopolitans&quot; and demands Yakonov&#39;s participation.</span></p></li></ul><h4 id='summary-12'><span>Summary</span></h4><ul><li><p><span>Major Shikin proposes Yakonov criticize security and finalize a list of zeks for camps, while Yakonov inwardly expresses his contempt for Shikin&#39;s ideas.</span></p></li><li><p><span>Yakonov, exhausted and reflecting on his dire situation, yearns for his peaceful home life and believes ruthlessness is a universal law that leads to victory.</span></p></li><li><p><span>Yakonov summons Sologdin to discuss his new design for an absolute encoder, believing it could be his salvation with Abakumov.</span></p></li><li><p><span>Sologdin reveals that he intentionally burned the design, claiming it was imperfect, leading to a stunned silence and an intense standoff with Yakonov.</span></p></li><li><p><span>Sologdin explains he burned the drawing to prevent others from taking credit for his work and to ensure his own survival and recognition.</span></p></li><li><p><span>Sologdin agrees to reproduce the complex design within Yakonov&#39;s one-month deadline, conditional on being appointed chief designer directly by a minister.</span></p></li><li><p><span>Stepanov bursts into Yakonov&#39;s office to announce he must lead an immediate Party resolution and meeting to combat &quot;slavish worship of all things foreign.&quot;</span></p></li></ul><h3 id='chapter-80-one-hundred-forty-seven-rubles'><span>Chapter 80 One Hundred Forty Seven Rubles</span></h3><p><span>This chapter describes the demeaning process by which special prison inmates receive and send letters, which also serves as a cover for Major Myshin&#39;s meetings with informants. It depicts the frustration and suspicion among prisoners, culminating in the &quot;stoolie hunters&quot; confronting two prisoners who received money orders.</span></p><h4 id='characters-13'><span>Characters</span></h4><ul><li><p><strong><span>Zhvakun:</span></strong><span> The duty officer who posts lists of prisoners summoned to Major Myshin.</span></p></li><li><p><strong><span>Major Myshin:</span></strong><span> The officer handling prisoner correspondence and clandestine meetings with informants.</span></p></li><li><p><strong><span>Major Shikin:</span></strong><span> The officer interrogating Spiridon, delaying his access to a letter.</span></p></li><li><p><strong><span>Spiridon:</span></strong><span> A prisoner undergoing interrogation by Major Shikin, steadfastly refusing to confess.</span></p></li><li><p><strong><span>Dyrsin:</span></strong><span> An engineer whose long-awaited letter is withheld by Myshin for a private conversation.</span></p></li><li><p><strong><span>Ruska Doronin:</span></strong><span> A prisoner who receives a 147 ruble money order, triggering suspicion from the &quot;stoolie hunters.&quot;</span></p></li><li><p><strong><span>Amantai Bulatov:</span></strong><span> Dyrsin&#39;s workmate and a prominent &quot;stoolie hunter,&quot; angered by the manipulation of prisoners&#39; correspondence.</span></p></li><li><p><strong><span>Khorobrov:</span></strong><span> A deeply anti-informant prisoner and leader of the &quot;stoolie hunters,&quot; who confronts Viktor Lyubimichev.</span></p></li><li><p><strong><span>Electrical Engineer:</span></strong><span> A prisoner who receives his first letter in eight years from his daughter, Ariadne, revealing their distant relationship.</span></p></li><li><p><strong><span>Viktor Lyubimichev:</span></strong><span> A physically strong prisoner with a history of wartime collaboration, confronted by hunters after receiving a 147 ruble money order.</span></p></li><li><p><strong><span>Artur Siromakha:</span></strong><span> A known informant who observes the confrontation and unsuccessfully attempts to report it.</span></p></li><li><p><strong><span>Isaak Kagan:</span></strong><span> Another prisoner exposed for receiving a 147 ruble money order, who frantically tries to explain its innocent origins.</span></p></li><li><p><strong><span>Abramson:</span></strong><span> A veteran prisoner who dismisses new correspondence restrictions as temporary and advises caution.</span></p></li><li><p><strong><span>Nerzhin:</span></strong><span> A prisoner who congratulates Ruska on organizing the &quot;hunt&quot; but expresses concern for his safety.</span></p></li></ul><h4 id='summary-13'><span>Summary</span></h4><ul><li><p><span>A list is posted summoning prisoners to Major Myshin for letters or remittances, a system used to conceal meetings with informants.</span></p></li><li><p><span>Dyrsin, first in line, is told his letter is there but must return after the break, leading Bulatov to accuse authorities of deliberately withholding mail.</span></p></li><li><p><span>Ruska Doronin receives a money order for 147 rubles, prompting the &quot;stoolie hunters&quot; to target him, suspecting he is an informant.</span></p></li><li><p><span>An electrical engineer receives his first letter in eight years from his daughter Ariadne, which reveals her unfamiliarity with him and practical requests.</span></p></li><li><p><span>Viktor Lyubimichev is confronted by Khorobrov and other hunters over his 147 ruble money order, implicitly linking him to his past as a collaborator for survival.</span></p></li><li><p><span>Artur Siromakha, an informant, witnesses the confrontation and tries to report it to Major Shikin but finds his office locked.</span></p></li><li><p><span>Isaak Kagan is also found with a 147 ruble pay stub and desperately explains it was due to a postal shortage and not a sign of collaboration.</span></p></li></ul><h3 id='chapter-81-the-scientific-elite'><span>Chapter 81 The Scientific Elite</span></h3><p><span>This chapter describes a deep philosophical conversation between two prisoners, Bobynin and Gerasimovich, about the moral compromises scientists make under a repressive regime. They debate the ethical responsibility of the &quot;scientific elite&quot; and their potential role in society, questioning their participation in projects that benefit the very system they despise.</span></p><h4 id='characters-14'><span>Characters</span></h4><ul><li><p><strong><span>Bobynin, Aleksandr Yevdokimovich:</span></strong><span> A prisoner who engages in a moral discussion about the scientific elite, admitting to shame but also a desire to live and find interest in his work.</span></p></li><li><p><strong><span>Gerasimovich, Illarion Pavlovich:</span></strong><span> A fellow prisoner who initiates a probing conversation about scientific ethics, societal responsibility, and the role of the &quot;scientific elite.&quot;</span></p></li><li><p><strong><span>Nerzhin:</span></strong><span> A character whom Gerasimovich plans to meet later to discuss a &quot;rationally constructed society.&quot;</span></p></li></ul><h4 id='summary-14'><span>Summary</span></h4><ul><li><p><span>Gerasimovich accosts Bobynin during their exercise walk, asking if he feels ashamed of his scientific work for the regime.</span></p></li><li><p><span>Bobynin admits to feeling shame, acknowledging his desire to live and find interest in his work, despite self-disgust.</span></p></li><li><p><span>Gerasimovich states that scientists should be politically aware or ethically principled, questioning whether &quot;worthless people&quot; should control the forces of nature.</span></p></li><li><p><span>Gerasimovich introduces the concept of &quot;Vanishing Russia,&quot; where the scientific elite are the only remaining intellectual group after other societal roles have disappeared.</span></p></li><li><p><span>He criticizes the scientific elite for being &quot;bought cheaply&quot; by providing advanced technologies to the regime instead of guiding society.</span></p></li><li><p><span>Bobynin and Gerasimovich agree to continue their discussion the next day during their lunch break.</span></p></li><li><p><span>Gerasimovich arranges to meet Nerzhin later that evening to discuss the idea of a &quot;rationally constructed society.&quot;</span></p></li></ul><h3 id='chapter-82-indoctrination-in-optimism'><span>Chapter 82 Indoctrination in Optimism</span></h3><p><span>Major Myshin, an officer responsible for censoring prisoners&#39; mail and observation, interrogates prisoner Dyrsin about his wife&#39;s increasingly pessimistic letters. Myshin, who withheld the letters due to their negative tone, instructs Dyrsin to write an optimistic reply to improve her morale and avoid further trouble.</span></p><h4 id='characters-15'><span>Characters</span></h4><ul><li><p><strong><span>Major Myshin:</span></strong><span> An officer who censors prisoners&#39; letters and observes their behavior, instructing Dyrsin to write an optimistic letter.</span></p></li><li><p><strong><span>Ivan Feofanovich Dyrsin:</span></strong><span> A prisoner (zek) at Marfino, an engineer, who is interrogated by Myshin about his wife&#39;s pessimistic letters.</span></p></li><li><p><strong><span>Dyrsin&#39;s wife:</span></strong><span> A struggling woman whose letters detail the extreme hardships, poverty, and despair she and her family face.</span></p></li></ul><h4 id='summary-15'><span>Summary</span></h4><ul><li><p><span>Major Myshin, responsible for reading prisoners&#39; letters and observing them, monitors the prison yard and gathers information from informants and direct observation.</span></p></li><li><p><span>Dyrsin, a prisoner nearing the end of his &quot;tenner&quot; and fearing re-sentencing, is ordered to Myshin&#39;s office.</span></p></li><li><p><span>Myshin confronts Dyrsin about his wife&#39;s complaining nature in her letters, labeling her a &quot;whiner&quot; who only emphasizes the bad aspects of life.</span></p></li><li><p><span>Myshin allows Dyrsin to read three withheld letters from his wife, dated September 18, October 30, and December 8.</span></p></li><li><p><span>The letters detail the family&#39;s extreme poverty, the declining health and eventual death of Granny, dysfunctional family relationships, and the overall despair and hardship of their lives.</span></p></li><li><p><span>Myshin explains he withheld the letters to maintain Dyrsin&#39;s good spirits and orders him to write an optimistic, positive reply to his wife, telling her that things will improve.</span></p></li><li><p><span>Myshin suggests Dyrsin reassure his wife of his imminent return and a big wage, while subtly implying Dyrsin&#39;s potential interest in a younger companion.</span></p></li></ul><h3 id='chapter-83-the-king-of-stool-pigeons'><span>Chapter 83 The King of Stool Pigeons</span></h3><p><span>Artur Siromakha, a respected but feared prisoner, is revealed as a highly effective informer with a sophisticated view of his profession. The text describes his past successes and current urgent situation as he discovers a widely known secret he failed to report, threatening his standing.</span></p><h4 id='characters-16'><span>Characters</span></h4><ul><li><p><strong><span>Artur Siromakha:</span></strong><span> A languid but athletic prisoner, known and feared as an intelligent and dangerous informer (&quot;stoolie&quot;).</span></p></li><li><p><strong><span>Ruska Doronin:</span></strong><span> A prisoner whose &quot;double agent&quot; scheme has become common knowledge among inmates, unbeknownst to Siromakha.</span></p></li><li><p><strong><span>Shikin:</span></strong><span> One of the &quot;godfather-majors&quot; in the sharashka, a security official Siromakha urgently seeks to report to.</span></p></li><li><p><strong><span>Myshin:</span></strong><span> Another &quot;godfather-major&quot; and security official, whose office Siromakha attempts to access.</span></p></li><li><p><strong><span>Dyrsin:</span></strong><span> A zek (prisoner) who is occupying Myshin&#39;s office, preventing Siromakha from seeing Myshin.</span></p></li><li><p><strong><span>Yardman:</span></strong><span> A person with a distinctive &quot;rasping voice&quot; whom Siromakha overhears and actively avoids outside Shikin&#39;s office.</span></p></li></ul><h4 id='summary-16'><span>Summary</span></h4><ul><li><p><span>Artur Siromakha is introduced as a dangerous and feared informer, whose denunciations swiftly lead to other prisoners&#39; transfers.</span></p></li><li><p><span>His background as impoverished gentry is detailed, along with his view of informing as a talented, artistic, and morally sound profession.</span></p></li><li><p><span>Artur successfully reported several &quot;agitators,&quot; &quot;anti-Soviet groups,&quot; and &quot;medical saboteurs&quot; in a previous camp, resulting in a reduced sentence for himself.</span></p></li><li><p><span>In Marfino, he becomes the most dangerous informer, gaining the trust of the &quot;godfather-majors&quot; but without them sharing their own secrets.</span></p></li><li><p><span>Artur discovers Ruska Doronin&#39;s &quot;double agent&quot; scheme is known by nearly half the institute, which compromises his reputation as an informant.</span></p></li><li><p><span>Feeling his honor is at stake, he desperately attempts to get an urgent audience with either Major Myshin or Major Shikin to report the missed information.</span></p></li><li><p><span>After repeated attempts and avoiding another individual, Artur successfully uses a secret knock to gain a brief, urgent audience with Shikin.</span></p></li></ul><h3 id='chapter-84-as-for-shooting'><span>Chapter 84 As for Shooting</span></h3><p><span>Major Shikin investigates a broken lathe, suspecting sabotage and aiming to turn the incident into a political campaign. His attempt to extract a confession from prisoner Spiridon fails, but an informer reveals another prisoner, Doronin, has betrayed others. This leads to a violent confrontation between Shikin and Doronin.</span></p><h4 id='characters-17'><span>Characters</span></h4><ul><li><p><strong><span>Major Shikin:</span></strong><span> An investigator baffled by a broken lathe, seeking to find a culprit for sabotage and use it for political gain.</span></p></li><li><p><strong><span>Spiridon (Yegorov):</span></strong><span> A prisoner and yardman, one of the men who moved the lathe, who cleverly evades Shikin&#39;s interrogation.</span></p></li><li><p><strong><span>Siromakha:</span></strong><span> A prisoner and informer who reports crucial information about Doronin to Major Shikin.</span></p></li><li><p><strong><span>Doronin (Ruska):</span></strong><span> A prisoner accused of betraying others for money, who is brutally confronted by Major Shikin.</span></p></li><li><p><strong><span>Klara:</span></strong><span> A woman in the Vacuum Lab who summons Doronin and is the subject of his affectionate thoughts.</span></p></li></ul><h4 id='summary-17'><span>Summary</span></h4><ul><li><p><span>Major Shikin investigates &quot;the Case of the Broken Lathe,&quot; suspecting sabotage after a historical Russian lathe was damaged during its unauthorized movement by prisoners.</span></p></li><li><p><span>Shikin interrogates prisoner Spiridon, one of the men who moved the lathe, but Spiridon skillfully and repeatedly denies any responsibility for the damage.</span></p></li><li><p><span>Informer Siromakha interrupts Shikin&#39;s interrogation to report that prisoner Doronin is showing off a money order and has betrayed several other prisoners.</span></p></li><li><p><span>Shikin then summons Doronin and, in a fit of rage, strikes him, accusing him of betrayal and threatening him with execution.</span></p></li><li><p><span>Doronin defiantly stands up to Shikin, suggesting the Major&#39;s own position is unstable and challenging his threat of execution.</span></p></li></ul></div></div>
+</body>
+</html>

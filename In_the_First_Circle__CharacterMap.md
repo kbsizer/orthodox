@@ -39,6 +39,10 @@ graph TD
 	end
 	Vitalievna(<b>Serafima Vitalievna</b><br>Sima, Simochka<br>Free worker at Marfino; worked alongside Gleb Nerzhin, developed amorous interest in him)
 	Nerzhin	<-- tryst ---> Vitalievna  
+	SW(Sologdin's Wife<br>name??)
+	Sologdin <-- spouse ---> SW
+	Larisa(<b>Larisa Nikolaevna Yemina</b><br>Copyist; a plump woman; wife of an MGB lieutenant colonel; works as Sologdin's subordinate and reports on him.)
+	Sologdin <-- tryst ---> Larisa
 	Nerzhina(<b>Nadezhda Ilyinichna Nerzhina</b><br>Nadya<br>Wife of Nerzhin; graduate student)
 	Nerzhina <-- spouse ---> Nerzhin
 
@@ -55,7 +59,9 @@ graph TD
 
 Add the Junior Lt and Lt. Colonel
 
-Add Sologdon's wife
+What is Sologdon's wife's name?
+
+Rubin has a wife and a mistress.  Both write to him.
 
 
 

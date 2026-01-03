@@ -93,7 +93,7 @@ The output for each chapter should be formatted using Markdown, as follows:
 #### Characters
 <bullet list of characters and descriptions>
 #### Summary
-<bullet list of main events>py
+<bullet list of main events>
 
 --- DOCUMENT START ---
 {file_content}
@@ -125,7 +125,7 @@ The output for each chapter should be formatted using Markdown, as follows:
 
 
 def main():
-    # --- 1. Take 2 integers as input command line parameters ---
+    # --- 1. Take 2 integers as input command line parameters and one optional output file ---
     parser = argparse.ArgumentParser(
         description="Generate Gemini summaries for a range of 'Chapter-nn-*.txt' files."
     )
@@ -135,6 +135,8 @@ def main():
     parser.add_argument(
         "end_index", type=int, help="The ending chapter number (inclusive)."
     )
+    parser.add_argument("output_file", type=str, help="output file (optional)")
+
     args = parser.parse_args()
 
     # Check for API Key
@@ -149,7 +151,11 @@ def main():
         )
         return
 
-    # --- 2. Iterate and Process ---
+    # --- 2. redirect STDOUT if output file specified ---
+    if args.output_file:
+        sys.stdout = open(args.output_file, "w")
+
+    # --- 3. Iterate and Process ---
     process_chapters(args.start_index, args.end_index)
 
 
