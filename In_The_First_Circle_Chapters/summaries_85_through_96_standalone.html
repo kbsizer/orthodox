@@ -1,0 +1,782 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+.nodeLabel p { padding-right: 2px; padding-left: 2px; }
+.typora-export .nodeLabel p { padding-right: 0px; padding-left: 0px; }
+foreignobject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&amp;subset=latin,latin-ext' type='text/css' />
+<style type='text/css'  id="style-theme_css">/* Ken's Typora Theme 
+ *
+ * Key Features:
+ * 	- Legal Numbering of headings
+ *  - Indentation of headings and text
+ *  - Use of color and strikethrough to contrast complete and incomplete tasks
+ *  - Use of full screen width
+ *  - Table of Contents limited to H2 and H3 only
+ *
+ * Note: Double slash comments (//) are problematic and should be avoided!
+ *
+ *********************************************/
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+/**** Mermaid (work in progress) ****/
+
+.mermaid .label {
+  color: #323D47;
+}
+
+.node text {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px;
+}
+
+/**** Code mode ****/
+
+.cm-s-typora-default {
+  background-color: #fff;
+  color: #040;
+  min-width: 100%;
+}
+
+.cm-s-typora-default .cm-header {
+  background-color: #fff;
+  color: #080;
+  min-width: 100%;
+}
+
+@include-when-export url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Helvetica","Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write{
+    /* max-width: 860px; */
+  	margin: 0 auto;
+  	padding: 20px 30px 40px 30px;
+	padding-top: 20px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+body > *:first-child {
+    margin-top: 0 !important;
+}
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    /*background: url("file:///C://Users//kbsiz//AppData//Roaming//images/modules/styleguide/para.png") no-repeat 10px center;*/
+    text-decoration: none;
+		color: #ff0000 !important;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+}
+
+/**************************************************/
+/** Legal Numbering of headings (starting at H2) **/ 
+/**************************************************/
+
+/** initialize css counter */
+h1 {
+    counter-reset: h2;
+}
+
+h2 {
+    counter-reset: h3;
+}
+
+h3 {
+    counter-reset: h4;
+	margin-left: 30px;
+}
+
+h4 {
+    counter-reset: h5;
+	margin-left: 60px;
+}
+
+h5 {
+    counter-reset: h6;
+	margin-left: 90px;
+}
+
+h6 {
+	margin-left: 120px;
+}
+
+/** put counter result into headings */
+
+#write h2:before {
+    counter-increment: h2;
+    content: counter(h2) ") "
+}
+
+#write h3:before,
+h3.md-focus.md-heading:before /** override the default style for focused headings */ {
+    counter-increment: h3;
+    content: counter(h2) "." counter(h3) ") "
+}
+
+#write h4:before,
+h4.md-focus.md-heading:before {
+    counter-increment: h4;
+    content: counter(h2) "." counter(h3) "." counter(h4) ") "
+}
+
+#write h5:before,
+h5.md-focus.md-heading:before {
+    counter-increment: h5;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ") "
+}
+
+#write h6:before,
+h6.md-focus.md-heading:before {
+    counter-increment: h6;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ") "
+}
+
+/*** override the default style/decorations for focused headings ***/
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    color: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: inherit;
+    left:initial;
+    float: none;
+    top:initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+p,
+ul,
+ol,
+dl,
+table,
+figure {
+	margin-left: 120px;
+	margin-right: 120px;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;	
+}
+
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 4px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+    border-bottom: 1px solid #ddd;
+    margin-left: 120px;
+}
+
+body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+/* BLOCK QUOTES ************************************************/
+
+blockquote {
+    border-left: 4px solid #337;
+    padding: 0 5px;
+    color: #337;
+	margin-left: 120px;
+	margin-right: 30px;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+}
+
+blockquote p {
+	margin-left: 30px;
+}
+
+blockquote blockquote {
+    padding-right: 0;
+}
+
+/*** TABLES ***********************************************/
+
+table {
+    padding: 120px;
+    word-break: initial;
+	width: auto;
+}
+table tr {
+    border-top: 1px solid #cccccc;
+    margin: 0;
+    padding: 0;
+}
+
+/* make rows alternate background color */
+table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+/*** Code Blocks ***********************************************/
+
+.CodeMirror-gutters {
+    border-right: 1px solid #ddd;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;	
+}
+
+.md-fences {
+	margin-left: 120px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 0.2em 1em;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+/* TABLE OF CONTENTS (Show H2 and H3 only) **************************************/
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;	
+	background-color: #eee;
+}
+
+/* .md-toc-h1, .md-toc-h4, .md-toc-h5, .md-toc-h6  {           <-- Use this to include H2 and H3 only */
+.md-toc-h1, .md-toc-h3, .md-toc-h4, .md-toc-h5, .md-toc-h6  {    /* <-- H2 only */
+  display:  none;  
+}
+
+/*** TO-DO TASK LISTS ******************************************/
+
+.task-list-done {    		/* styles for completed tasks */
+	text-decoration: none;   
+	color: #020;				
+}
+.task-list-not-done {		/* styles for incomplete tasks */
+	text-decoration: none; 
+	color: #900;
+}
+/*
+.task-list-item input {
+  top: 0px;    * 3px;  *
+  left: 0px;   * 8px; *
+  right: 0px;      
+}
+*/
+
+/*** MEDIA ******************************************************/
+
+@media screen and (min-width: 914px) {
+    /*body {
+        width: 854px;
+        margin: 0 auto;
+    }*/
+}
+
+/*********************** Work in progress: Trying to reduce HUGE margins when printing */
+@media print {
+    @page { 
+        size: 8.5in 11in; 
+        margin: 0in; 
+        padding: 0in; 
+    }
+
+    html {
+        font-size: 13px;
+    }
+    /* commented out -- causes lonely headings to print on one page, table on next
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    */
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+/*** DISABLE Little blocks in front of current line showing heading level ***
+
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+		color: #FF00FF;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+		color: #FF00FF;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+		color: #FF00FF;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+	color: #FF00FF;
+}
+***************** END DISABLED BLOCK ****************************/
+
+.md-image>.md-meta {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag{
+	color: inherit;
+}
+
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#md-notification:before {
+    top: 10px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+
+<title>summaries_85_through_96_standalone</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='in-the-first-circle-summaries-of-chapters-85-through-96'><span>In The First Circle, summaries of chapters 85 through 96</span></h1><h2 id='chapter-85---prince-kurbsky'><span>Chapter 85 - Prince Kurbsky</span></h2><p><span>Innokenty, a ministry official, experiences intense fear and despair as a result of his impulsive, secret phone call. He grapples with the morality and consequences of his actions, fearing imminent arrest and torture, while contrasting his plight with historical figures and philosophical ideas.</span></p><h3 id='characters'><span>Characters</span></h3><ul><li><p><strong><span>Innokenty:</span></strong><span> A ministry official consumed by terror after making a secret call to an embassy to prevent a bomb theft.</span></p></li><li><p><strong><span>Ruska Doronin:</span></strong><span> A carefree outlaw, mentioned as a contrast to Innokenty&#39;s fearful nature.</span></p></li><li><p><strong><span>Georgy Koval:</span></strong><span> A person whose secret Innokenty knew, related to the bomb theft he tried to stop.</span></p></li><li><p><strong><span>Vyshinsky:</span></strong><span> An official whose stamp was on Innokenty&#39;s UN accreditation, indicating prior approval for his departure.</span></p></li><li><p><strong><span>Dotty:</span></strong><span> Innokenty&#39;s wife, who calls him to make plans for an evening out, momentarily distracting him from his anxiety.</span></p></li><li><p><strong><span>Shchevronok and Zavarzin:</span></strong><span> Colleagues Innokenty considers more knowledgeable about the bomb details and thus more likely suspects.</span></p></li><li><p><strong><span>Epicurus:</span></strong><span> An ancient Greek philosopher whose ideas on death, suffering, and wisdom Innokenty contemplates for solace.</span></p></li><li><p><strong><span>Prince Kurbsky:</span></strong><span> A historical military leader who escaped Ivan the Terrible, used as a point of comparison for Innokenty&#39;s situation.</span></p></li></ul><h3 id='summary'><span>Summary</span></h3><ul><li><p><span>Innokenty reflects on the impulsive phone call he made to an embassy to prevent the theft of a bomb, knowing his action could lead to his arrest.</span></p></li><li><p><span>He learns his planned departure has been delayed by a vice minister, leading him to believe his secret call has been discovered.</span></p></li><li><p><span>Overwhelmed by fear, Innokenty experiences suicidal thoughts and a period of unconsciousness while waiting for an arrest that doesn&#39;t come.</span></p></li><li><p><span>Dotty, his wife, calls to make plans for the evening, offering Innokenty a temporary sense of normalcy and distraction.</span></p></li><li><p><span>Innokenty reflects on Epicurus&#39;s philosophy about death and suffering, questioning if such wisdom can help him face potential torture.</span></p></li><li><p><span>He considers himself a potential traitor in the eyes of his countrymen, comparing his situation to Prince Kurbsky&#39;s historical escape from Ivan the Terrible.</span></p></li><li><p><span>Innokenty worries his phone call might not have prevented the bomb theft after all, despite his personal sacrifice.</span></p></li></ul><h2 id='chapter-86---no-fisher-of-men'><span>Chapter 86 - No Fisher of Men</span></h2><p><span>Major General Oskolupov visits the Marfino Institute&#39;s Number Seven, which is in disarray after a project failure, and holds an unproductive meeting with the engineers. He then offers prisoner-engineer Gerasimovich early release if he develops new surveillance technology, but Gerasimovich staunchly refuses.</span></p><h3 id='characters-2'><span>Characters</span></h3><ul><li><p><strong><span>Foma Oskolupov:</span></strong><span> A major general who inspects Number Seven and attempts to recruit Gerasimovich for new surveillance projects.</span></p></li><li><p><strong><span>Yakonov:</span></strong><span> The departmental director of Number Seven, who discreetly withholds positive project news from Oskolupov.</span></p></li><li><p><strong><span>Mamurin:</span></strong><span> The exhausted and pale commander of Number Seven, disheartened by a recent project catastrophe.</span></p></li><li><p><strong><span>Gerasimovich (Illarion):</span></strong><span> A prisoner-engineer (optician) offered early release for designing surveillance cameras, which he ultimately rejects.</span></p></li><li><p><strong><span>Lyubimichev &amp; Siromakha:</span></strong><span> Two eager and loyal prisoner-engineers in Number Seven who try to curry favor with Oskolupov.</span></p></li><li><p><strong><span>Markushev:</span></strong><span> An energetic engineer who attempts to distinguish himself and blame others during Oskolupov&#39;s visit.</span></p></li></ul><h3 id='summary-2'><span>Summary</span></h3><ul><li><p><span>Major General Oskolupov arrives at Number Seven, finding the lab in complete disarray with its main project, the &quot;clipper&quot; and &quot;scrambler,&quot; having been dismantled.</span></p></li><li><p><span>Oskolupov presides over a tense, unproductive discussion with the engineers, criticizing their lack of progress and making them speak out.</span></p></li><li><p><span>Yakonov, despite having news of an encoder success, decides to withhold it from Oskolupov, preferring to let him worry.</span></p></li><li><p><span>Oskolupov summons Gerasimovich to Yakonov&#39;s office and questions him about his skills, noting a colleague, Bobyor, received early release for useful work.</span></p></li><li><p><span>Oskolupov offers Gerasimovich early release and a transfer to another special prison (Spiridonovka) to develop night vision cameras and tiny doorpost cameras.</span></p></li><li><p><span>Gerasimovich firmly declines the offer of remission, stating he cannot engage in work that helps imprison others, declaring himself &quot;</span><em><strong><span>no fisher of men</span></strong></em><span>.&quot;</span></p></li></ul><h2 id='chapter-87---at-the-fount-of-science'><span>Chapter 87 - At the Fount of Science</span></h2><p><span>Rubin dedicates himself to developing phonoscopy to identify a criminal from voice recordings, assisted by Roitman. Their scientific deductions, which narrow down suspects, are ultimately overruled by General Oskolupov, who prioritizes swift arrests over conclusive evidence. The scientists are left disillusioned as their nascent work is dismissed.</span></p><h3 id='characters-3'><span>Characters</span></h3><ul><li><p><strong><span>Rubin:</span></strong><span> A brilliant scientist engrossed in developing phonoscopy to identify a criminal from voice recordings.</span></p></li><li><p><strong><span>Smolosidov:</span></strong><span> Rubin&#39;s sullen workmate, present in the lab, who assists with tapes but largely remains silent and hostile.</span></p></li><li><p><strong><span>Roitman:</span></strong><span> Rubin&#39;s superior, who balances scientific support for Rubin with the pragmatic demands of their authoritarian department head.</span></p></li><li><p><strong><span>Oskolupov:</span></strong><span> An authoritarian general who demands immediate results and dismisses the scientific nuances presented by Rubin and Roitman.</span></p></li><li><p><strong><span>Volodin:</span></strong><span> One of two main suspects identified by Rubin and Roitman whose voice resembled the criminal&#39;s.</span></p></li><li><p><strong><span>Shchevronok:</span></strong><span> The other main suspect, whom Rubin strongly believes is the criminal based on subtle indications.</span></p></li></ul><h3 id='summary-3'><span>Summary</span></h3><ul><li><p><span>Rubin intensely analyzes voice tapes and audiovisual printouts in a secluded lab, applying his nascent science of phonoscopy to identify a criminal.</span></p></li><li><p><span>Roitman arranges special food for Rubin, bringing him back to awareness and discussing the preliminary findings of his extensive work.</span></p></li><li><p><span>Rubin and Roitman narrow down the five initial suspects to two—Volodin and Shchevronok—based on similarities in their voice patterns to the criminal&#39;s.</span></p></li><li><p><span>Rubin passionately argues that Shchevronok is the criminal, citing subtle indications, while Roitman emphasizes the need for further quantitative proof.</span></p></li><li><p><span>General Oskolupov arrives, expressing dissatisfaction with their inconclusive report and dismissing their scientific approach in favor of immediate action.</span></p></li><li><p><span>Oskolupov orders the arrest of both Volodin and Shchevronok, stating that any questions of innocence will be handled by &quot;Security.&quot;</span></p></li><li><p><span>Rubin and Roitman are left in silence and disillusionment, feeling their scientific work and aspirations for phonoscopy have been disregarded.</span></p></li></ul><h2 id='chapter-88---the-leading-ideology'><span>Chapter 88 - The Leading Ideology</span></h2><p><span>A mandatory political study lecture on Dialectical Materialism is held at the Marfino special prison, a common practice across the Soviet Union. Despite the lecturer&#39;s enthusiastic start, most attendees are bored, distracted by personal matters, or cynical, revealing the rote and unengaging nature of the ideological instruction. Unbeknownst to some, significant personal events, including arrests, unfold for a few prisoners during this time.</span></p><h3 id='characters-4'><span>Characters</span></h3><ul><li><p><strong><span>Rakhmankul Shamsetdinov:</span></strong><span> The lecturer from the Oblast Party Committee, a theatrical speaker whose energy wanes during the lecture.</span></p></li><li><p><strong><span>Stepanov:</span></strong><span> A Party official responsible for organizing and ensuring attendance at the lecture, constantly urging discipline.</span></p></li><li><p><strong><span>Tamara and Klara:</span></strong><span> Two girls sent to the lecture by their lab head, both distracted; Klara is deeply engrossed in thoughts about her love life.</span></p></li><li><p><strong><span>Simochka:</span></strong><span> A girl on duty from the Acoustics Laboratory, anxiously awaiting the lecture&#39;s end for a planned meeting with Gleb.</span></p></li><li><p><strong><span>Roitman:</span></strong><span> Deputy in the Acoustics Laboratory, forced to listen attentively despite his internal skepticism about the content.</span></p></li><li><p><strong><span>Yakonov:</span></strong><span> An individual compelled to attend, annoyed by the lecture and wishing for its conclusion.</span></p></li><li><p><strong><span>Klykachev:</span></strong><span> A uniformed individual who conducts similar political education, observing the lecturer rather than listening.</span></p></li><li><p><strong><span>Tonya:</span></strong><span> A Tatar girl from the Acoustics Lab, who exchanges notes with a lieutenant during the lecture.</span></p></li><li><p><strong><span>Gleb:</span></strong><span> A prisoner whom Simochka plans to meet, and whose wife visited him the day before the lecture.</span></p></li><li><p><strong><span>Rostislav (Ruska):</span></strong><span> A prisoner Klara is thinking about, who has been arrested and taken away during the lecture.</span></p></li><li><p><strong><span>Major Shikin:</span></strong><span> An officer who searched Ruska’s desk in the Vacuum Laboratory during the lecture.</span></p></li><li><p><strong><span>Girl in the cotton dress:</span></strong><span> A listener who asks the lecturer a question about bourgeois sociologists.</span></p></li></ul><h3 id='summary-4'><span>Summary</span></h3><ul><li><p><span>A mandatory political study session on Dialectical Materialism is held at Marfino, focusing on the commonly problematic Chapter 4.</span></p></li><li><p><span>Rakhmankul Shamsetdinov, a confident lecturer, begins by expounding the four features of the dialectic and philosophical materialism.</span></p></li><li><p><span>Most attendees are inattentive and distracted, engaging in note-passing, games, or personal thoughts rather than listening to the lecture.</span></p></li><li><p><span>The lecturer&#39;s demeanor changes from energetic to deeply fatigued and whispering for a significant portion, before reviving towards the end.</span></p></li><li><p><span>Simochka anxiously awaits the lecture&#39;s conclusion for a meeting with Gleb, unaware his wife visited him yesterday.</span></p></li><li><p><span>Klara is preoccupied with her personal romantic dilemmas, particularly concerning Rostislav, who has been arrested and his desk searched during the lecture.</span></p></li><li><p><span>A girl asks why bourgeois sociologists, if aware of the clear Marxist views, write contrary texts; the lecturer attributes this to them being &quot;bribed&quot; and &quot;political prostitutes.&quot;</span></p></li></ul><h2 id='chapter-89---little-quail'><span>Chapter 89 - Little Quail</span></h2><p><span>Simochka, dressed in a new gown, eagerly anticipates a romantic meeting with Gleb in the Acoustics Laboratory. However, Gleb reveals that he recently had a visit from his wife, which has reaffirmed his commitment to her, leaving Simochka heartbroken. The chapter concludes with Gleb offering a small gesture of comfort amidst her despair.</span></p><h3 id='characters-5'><span>Characters</span></h3><ul><li><p><strong><span>Simochka:</span></strong><span> A young woman deeply in love with Gleb, who dresses up for a romantic meeting and is devastated by his confession.</span></p></li><li><p><strong><span>Gleb (Nerzhin):</span></strong><span> A prisoner in the laboratory, conflicted after a visit from his wife, leading him to end his pursuit of Simochka.</span></p></li><li><p><strong><span>Roitman:</span></strong><span> Gleb&#39;s superior, who hands over keys and expresses sadness before leaving the lab for the evening.</span></p></li><li><p><strong><span>Roitman&#39;s deputy:</span></strong><span> The person who gives Simochka the keys and seal for the Acoustics Laboratory.</span></p></li><li><p><strong><span>Gleb&#39;s wife:</span></strong><span> Her recent visit with Gleb reinforces his marital commitment, leading him to turn away from Simochka.</span></p></li><li><p><strong><span>Obukhova:</span></strong><span> A singer whose emotionally relevant song is accidentally played on the radio, intensifying Simochka&#39;s distress.</span></p></li><li><p><strong><span>Sentry:</span></strong><span> A guard on a watchtower outside the laboratory, whose gaze on the bare windows creates a barrier between Simochka and Gleb.</span></p></li></ul><h3 id='summary-5'><span>Summary</span></h3><ul><li><p><span>Simochka arrives at the Acoustics Laboratory in a special new dress, expecting a romantic encounter with Gleb, who is not yet there.</span></p></li><li><p><span>Gleb enters the lab but stays at his desk, explaining that the uncurtained windows prevent him from approaching her.</span></p></li><li><p><span>Gleb confesses to Simochka that he saw his wife the previous day and feels he would be a &quot;scoundrel&quot; if he didn&#39;t tell her he was committed to his wife.</span></p></li><li><p><span>Simochka sobs quietly over her desk, and Gleb tries to console her from a distance, explaining his wife&#39;s loyalty and his obligation.</span></p></li><li><p><span>Gleb quietly switches on a radio, which broadcasts a song by Obukhova with lyrics (&quot;No, you are not the one I burn for...&quot;) that painfully reflect Simochka&#39;s situation.</span></p></li><li><p><span>Overcome with remorse, Gleb rushes to Simochka, takes her head in his hands, and kisses her hair near her forehead, bringing her a measure of relief.</span></p></li></ul><h2 id='chapter-90---on-the-back-stairway'><span>Chapter 90 - On the Back Stairway</span></h2><p><span>This chapter describes a clandestine meeting between prisoners Nerzhin and Gerasimovich on a back stairway. They engage in a deep philosophical debate about the nature of a rational society, the concept of progress, and the practical means to change Russia&#39;s oppressive government. Nerzhin expresses profound skepticism while Gerasimovich advocates for an intellectual elite and a &quot;palace revolt.&quot;</span></p><h3 id='characters-6'><span>Characters</span></h3><ul><li><p><strong><span>Nerzhin:</span></strong><span> A prisoner profoundly affected by Ruska&#39;s arrest, who meets Gerasimovich to discuss societal change and expresses deep skepticism.</span></p></li><li><p><strong><span>Gerasimovich:</span></strong><span> A prisoner who believes in constructing an intellectual, non-democratic society and proposes a &quot;palace revolt&quot; to overthrow the current regime.</span></p></li><li><p><strong><span>Ruska:</span></strong><span> A fellow prisoner whose recent arrest worries Nerzhin and is a topic of conversation.</span></p></li><li><p><strong><span>Shikin:</span></strong><span> The officer who confirmed Ruska&#39;s arrest by breaking into his desk.</span></p></li><li><p><strong><span>Mamurin:</span></strong><span> An individual whose absence Gerasimovich checked to ensure their meeting&#39;s security.</span></p></li></ul><h3 id='summary-6'><span>Summary</span></h3><ul><li><p><span>Nerzhin, still worried by Ruska’s recent arrest, almost forgets his secret rendezvous with Gerasimovich on the back stairway.</span></p></li><li><p><span>Nerzhin and Gerasimovich meet in the dark, where Gerasimovich notes their lack of conspiracy skills and announces his imminent departure from the prison.</span></p></li><li><p><span>Gerasimovich outlines his vision for an intellectual, non-democratic society ruled by an elite, which Nerzhin criticizes as historically flawed and lacking ethical consideration.</span></p></li><li><p><span>Gerasimovich proposes a &quot;palace revolt&quot; led by the technical intelligentsia to remove key leaders like Stalin, advocating for quick, decisive action.</span></p></li><li><p><span>Nerzhin vehemently rejects the revolt plan, citing its impossibility, the unreliability of military chiefs, and the unique, isolated perspective of prisoners.</span></p></li><li><p><span>They debate the concept of human progress, with Gerasimovich highlighting technological and societal advancements, while Nerzhin argues people have become worse and unhappier.</span></p></li><li><p><span>Nerzhin, expressing deep despair, suggests that only a mysterious &quot;Word&quot; from noble people, not a military coup, might emerge to shatter concrete and bring about true change.</span></p></li></ul><h2 id='chapter-91---abandon-hope-all-ye-who-enter-here'><span>Chapter 91 - Abandon Hope All Ye Who Enter Here</span></h2><p><span>Innokenty is excited about a confirmed foreign posting and is summoned to the ministry, but his wife expresses strong objections to being left behind. On his way, he is unexpectedly arrested by his driver and a &quot;mechanic,&quot; then confined in a small, sealed cell in Lubyanka where he becomes convinced he is being gassed.</span></p><h3 id='characters-7'><span>Characters</span></h3><ul><li><p><strong><span>Innokenty:</span></strong><span> A diplomat who receives a foreign posting but is arrested on his way to finalize details.</span></p></li><li><p><strong><span>Dotty:</span></strong><span> Innokenty&#39;s wife, who becomes distressed at the idea of Innokenty traveling abroad without her.</span></p></li><li><p><strong><span>The Boss (Comrade General):</span></strong><span> Innokenty&#39;s superior who calls to confirm his new posting and summons him to the ministry.</span></p></li><li><p><strong><span>Amiable Driver:</span></strong><span> The man who drives Innokenty&#39;s car, later revealed to be part of the arrest team.</span></p></li><li><p><strong><span>Mechanic:</span></strong><span> A man who joins Innokenty in the car, presents the arrest warrant, and assists in the arrest.</span></p></li><li><p><strong><span>Long-faced Sergeant:</span></strong><span> A guard at the &quot;Reception of Prisoners&quot; in Lubyanka.</span></p></li><li><p><strong><span>Careworn Middle-aged Woman:</span></strong><span> Another sergeant/guard who escorts Innokenty to his cell.</span></p></li></ul><h3 id='summary-7'><span>Summary</span></h3><ul><li><p><span>Innokenty receives a friendly call from &quot;The Boss&quot; confirming his foreign posting and requesting his immediate presence at the ministry to finalize details.</span></p></li><li><p><span>Innokenty&#39;s wife, Dotty, protests being left behind, stating they always share new experiences and she &quot;can&#39;t be left behind.&quot;</span></p></li><li><p><span>On the way to the ministry, the driver picks up a &quot;mechanic&quot; who then reveals himself by presenting an arrest warrant for Innokenty Volodin.</span></p></li><li><p><span>Despite Innokenty&#39;s protests, he is driven to Lubyanka Square, brought through a gate, and ordered out of the car.</span></p></li><li><p><span>At the &quot;Reception of Prisoners,&quot; Innokenty is searched, his valuables and epaulets removed, and then locked into a small, windowless cell (Room 8).</span></p></li><li><p><span>In his cell, Innokenty finds a small pencil, then becomes terrified, believing a humming machine is pumping colorless, odorless gas into the room.</span></p></li><li><p><span>Panicked, Innokenty starts hammering on the door, crying out &quot;Open up! Open up! I’m suffocating! Give me air!&quot;</span></p></li></ul><h2 id='chapter-92---keep-forever'><span>Chapter 92 - Keep Forever</span></h2><p><span>Innokenty Volodin, a newly arrested diplomat, is subjected to a series of disorienting and dehumanizing procedures upon arrival at Lubyanka prison. He endures repeated identity checks, intrusive body searches, forced shaving, and confiscation of his personal effects, all designed to systematically strip him of his identity and break his will.</span></p><h3 id='characters-8'><span>Characters</span></h3><ul><li><p><strong><span>Innokenty Volodin:</span></strong><span> The arrested diplomat and protagonist, enduring the initial prison procedures.</span></p></li><li><p><strong><span>Long-faced guard:</span></strong><span> The first guard Innokenty interacts with, providing water and enforcing cell rules.</span></p></li><li><p><strong><span>Lieutenant:</span></strong><span> An officer who records Innokenty&#39;s basic personal details from a piece of paper.</span></p></li><li><p><strong><span>Gray Smock guard:</span></strong><span> Conducts a thorough and humiliating body search, confiscating and damaging Innokenty&#39;s uniform.</span></p></li><li><p><strong><span>Barber (White Smock Guard):</span></strong><span> Forcibly shaves Innokenty&#39;s head and body hair.</span></p></li><li><p><strong><span>Purple-nosed guard:</span></strong><span> Records Innokenty&#39;s physical characteristics and measures his height.</span></p></li><li><p><strong><span>Medical Examiner (Stout woman):</span></strong><span> Asks Innokenty about lice and venereal diseases.</span></p></li><li><p><strong><span>Reception/Storage Staff (Girl and Man in blue smock):</span></strong><span> Process Innokenty&#39;s belongings, issue receipts, and perform fingerprinting and photographing.</span></p></li></ul><h3 id='summary-8'><span>Summary</span></h3><ul><li><p><span>Innokenty is repeatedly questioned about his identity by different guards and warned against making noise in his cell.</span></p></li><li><p><span>He undergoes a humiliating full body search where his diplomatic uniform is stripped, cut, and its buttons removed, followed by an intimate physical inspection.</span></p></li><li><p><span>His head, armpits, and pubic hair are forcibly shaved by a barber, further eroding his sense of self.</span></p></li><li><p><span>After a shower, his original clothes are taken for &quot;cooking&quot; (sterilization), and he is issued coarse, ill-fitting prison underwear.</span></p></li><li><p><span>His personal belongings, including his watch, pen, and money, are systematically confiscated and documented, with receipts issued.</span></p></li><li><p><span>Innokenty is fingerprinted and photographed, reading the unsettling instruction &quot;KEEP PERMANENTLY&quot; on his fingerprint form.</span></p></li></ul><h2 id='chapter-93---second-wind'><span>Chapter 93 - Second Wind</span></h2><p><span>Innokenty endures a sleepless night in Lubyanka prison, moving between various cells and undergoing processing. Despite physical discomfort and despair, he gradually finds a &quot;second wind,&quot; reflecting on justice, freedom, and his actions, ultimately preparing himself for interrogation.</span></p><h3 id='characters-9'><span>Characters</span></h3><ul><li><p><strong><span>Innokenty (Artemievich Volodin):</span></strong><span> A state counselor and diplomat, recently arrested and the central character reflecting on his dire situation.</span></p></li><li><p><strong><span>Dotty:</span></strong><span> Innokenty&#39;s wife, who he believes will get a divorce and remarry after his arrest.</span></p></li><li><p><strong><span>Father-in-law:</span></strong><span> Innokenty&#39;s father-in-law, whose career will be impacted by Innokenty&#39;s arrest.</span></p></li><li><p><strong><span>Sergeant Major:</span></strong><span> A smart, swarthy guardsman who escorts Innokenty through parts of the prison.</span></p></li><li><p><strong><span>Flabby Lieutenant:</span></strong><span> A guard with a distinctive scald mark who questions Innokenty.</span></p></li><li><p><strong><span>Squint-eyes:</span></strong><span> A young, Asiatic-looking guard who attends to Innokenty in his final cell and converses with him.</span></p></li><li><p><strong><span>Uncle Avenir:</span></strong><span> Innokenty&#39;s uncle, whose remembered words and wisdom provide comfort and shape Innokenty&#39;s reflections.</span></p></li></ul><h3 id='summary-9'><span>Summary</span></h3><ul><li><p><span>Innokenty spends a long, sleepless night in Lubyanka prison, moved between various cells and reflecting on his certain doom and the perceived pointlessness of his call.</span></p></li><li><p><span>He is processed, then led through the prison via an elevator (whose humming he recognizes as a mysterious sound from earlier) to a new, larger cell.</span></p></li><li><p><span>Innokenty struggles to sleep in the brightly lit cell, asking the guard, &quot;Squint-eyes,&quot; for the light to be dimmed and for water, leading to an unusual, brief conversation about their past lives.</span></p></li><li><p><span>Squint-eyes provides Innokenty with a mattress, pillow, and blanket, but repeatedly wakes him for reveille and enforces strict rules on sleeping posture.</span></p></li><li><p><span>Denied breakfast, Innokenty is given needle and thread to repair his uniform, a painstaking task that calms him and gives him a &quot;second wind.&quot;</span></p></li><li><p><span>At 8:00 a.m., he receives black bread, sugar, and tea; consuming them helps him think more clearly, leading to reflections on his patriotic act and Uncle Avenir&#39;s philosophy.</span></p></li><li><p><span>A new guard arrives to take Innokenty for interrogation, prompting him to reflect further on the meaning of his love for his country.</span></p></li></ul><h2 id='chapter-94---always-caught-off-guard'><span>Chapter 94 - Always Caught Off Guard</span></h2><p><span>A seemingly ordinary morning in a special prison is depicted, marked by routine grievances and discussions about an absent prisoner. This calm is abruptly shattered when four prisoners are called out for mass transportation, a dreaded event that devastates their established lives and casts them into an uncertain, perilous future.</span></p><h3 id='characters-10'><span>Characters</span></h3><ul><li><p><strong><span>Lieutenant Shusterman:</span></strong><span> A captious officer going off duty, responsible for making morning announcements.</span></p></li><li><p><strong><span>Sologdin:</span></strong><span> A prisoner who regularly goes out early to chop wood and keeps his window open.</span></p></li><li><p><strong><span>Rubin:</span></strong><span> A prisoner in a foul mood after a sleepless night, who dramatically reacts to the transportation announcement.</span></p></li><li><p><strong><span>Potapov:</span></strong><span> An early-rising prisoner who has already eaten, cleaned his bed, and is reading, eager for work.</span></p></li><li><p><strong><span>Gerasimovich:</span></strong><span> A prisoner slowly eating breakfast, identified as a &quot;theorist of palace Revolution.&quot;</span></p></li><li><p><strong><span>Nerzhin (Gleb):</span></strong><span> A prisoner contemplating philosophical questions, who is among those called for transportation.</span></p></li><li><p><strong><span>Pryanchikov:</span></strong><span> A prisoner who angrily protests a new order restricting access to hot water after supper.</span></p></li><li><p><strong><span>Dvoetyosov:</span></strong><span> A prisoner who makes a sarcastic remark towards Pryanchikov&#39;s protest.</span></p></li><li><p><strong><span>Khorobrov:</span></strong><span> One of the prisoners whose name is called out for transportation.</span></p></li><li><p><strong><span>Mikhailov:</span></strong><span> One of the prisoners whose name is called out for transportation.</span></p></li><li><p><strong><span>Syomushkin:</span></strong><span> One of the prisoners whose name is called out for transportation.</span></p></li><li><p><strong><span>Ruska:</span></strong><span> An absent prisoner, presumed arrested and locked up, whose fate is being discussed among others.</span></p></li></ul><h3 id='summary-10'><span>Summary</span></h3><ul><li><p><span>The special prison day begins with morning routines, including breakfast and exercise, under the supervision of a captious Lieutenant Shusterman.</span></p></li><li><p><span>Prisoners discuss the absence of Ruska, speculating he has been arrested and faces potential solitary confinement.</span></p></li><li><p><span>Pryanchikov furiously protests a new order from the commandant forbidding hot water access after supper, claiming Minister Abakumov promised otherwise.</span></p></li><li><p><span>During morning inspection, Lieutenant Shusterman announces that Khorobrov, Mikhailov, Nerzhin, and Syomushkin are to prepare for transportation.</span></p></li><li><p><span>The announcement causes chaos among the prisoners, with diverse reactions ranging from grief to speculation, and Rubin dramatically likening it to an execution.</span></p></li><li><p><span>The text describes transportation as a devastating event that strips prisoners of their possessions, established routines, and any semblance of a settled life.</span></p></li><li><p><span>The four named prisoners, among twenty total, face an unknown destination, potential hardship, and the end of their relatively stable life in the special prison.</span></p></li></ul><h2 id='chapter-95---farewell-sharashka'><span>Chapter 95 - Farewell Sharashka</span></h2><p><span>Nerzhin, awaiting transfer from the sharashka, defiantly confronts Major Shikin to reclaim a confiscated book. He then prepares for his forced departure by distributing his belongings and bidding poignant farewells to his friends and colleagues, who reflect on his advocacy and the grim realities of their imprisonment.</span></p><h3 id='characters-11'><span>Characters</span></h3><ul><li><p><strong><span>Nerzhin:</span></strong><span> A defiant prisoner being transferred, who successfully reclaims his book and says goodbye to his friends.</span></p></li><li><p><strong><span>Major Shikin:</span></strong><span> A gloomy security officer who initially resists but is compelled to return Nerzhin&#39;s confiscated book.</span></p></li><li><p><strong><span>Simochka (Serafima Vitalievna):</span></strong><span> A colleague in the Acoustics Laboratory who agrees to hide Nerzhin&#39;s research notes.</span></p></li><li><p><strong><span>Rubin:</span></strong><span> A close friend and fellow prisoner who shares an emotional farewell and embrace with Nerzhin.</span></p></li><li><p><strong><span>Sologdin:</span></strong><span> A colleague who tries to persuade Nerzhin to stay in the sharashka and continue his work.</span></p></li><li><p><strong><span>Potapov:</span></strong><span> A busy engineer and co-author who exchanges a brief, melancholic goodbye with Nerzhin.</span></p></li><li><p><strong><span>Spiridon:</span></strong><span> A yardman and close friend whom Nerzhin tries to comfort after learning of a troubling letter from his daughter.</span></p></li></ul><h3 id='summary-11'><span>Summary</span></h3><ul><li><p><span>Nerzhin confronts Major Shikin, demanding the return of his confiscated book, &quot;Selected Poems of Sergei Yesenin,&quot; citing prison regulations and censorial rules.</span></p></li><li><p><span>Despite Shikin&#39;s initial hostility and attempts to find seditious content, Nerzhin&#39;s legal arguments force the major to return the book, though not allowing him to take it upon transfer.</span></p></li><li><p><span>Nerzhin entrusts his research notes to Simochka and destroys or discards other personal papers, keeping only three treasured notebooks.</span></p></li><li><p><span>He distributes his personal belongings and library books among fellow prisoners, receiving cigarettes in exchange, a common practice before transfer.</span></p></li><li><p><span>Nerzhin shares a heartfelt farewell with Rubin, expressing his deep regard for him despite their frequent arguments.</span></p></li><li><p><span>He engages in a final, quiet debate with Sologdin, who unsuccessfully attempts to persuade Nerzhin to stay and work in a new design group.</span></p></li><li><p><span>Nerzhin says goodbye to Potapov, acknowledging the unlikelihood of meeting freely again, before Potapov rushes off to work.</span></p></li><li><p><span>He offers his Yesenin book to Spiridon but realizes his friend is profoundly upset by a letter from his daughter, and is then rushed out by a guard.</span></p></li></ul><h2 id='chapter-96---meat'><span>Chapter 96 - Meat</span></h2><p><span>Relegated prisoners from a special prison undergo a harsh search and confiscation of their personal items before being transferred to labor camps. They successfully demand a final meal, reflecting on their bleak future and the relative comfort they are leaving behind. The chapter concludes with their silent, defiant departure in a camouflaged police truck, observed by an unwitting foreign journalist.</span></p><h3 id='characters-12'><span>Characters</span></h3><ul><li><p><strong><span>Major Myshin:</span></strong><span> A corpulent, purple-faced major overseeing the search and confiscating prisoners&#39; items.</span></p></li><li><p><strong><span>Lieutenant Colonel Klimentiev:</span></strong><span> Occasionally present during the search and heard giving orders during departure.</span></p></li><li><p><strong><span>Engineer Romashov:</span></strong><span> A long-serving prisoner whose decades of engineering notes are confiscated despite prior approval.</span></p></li><li><p><strong><span>Designer Syomushkin:</span></strong><span> A new prisoner, terrified of labor camps, who destroys his cherished Lermontov book after it&#39;s seized.</span></p></li><li><p><strong><span>Khorobrov:</span></strong><span> A prisoner who vehemently complains about shoddy Soviet goods and insists on using original city names.</span></p></li><li><p><strong><span>Nerzhin:</span></strong><span> A prisoner who concealed coded notes, demands lunch for the group, and comments on their grim destination.</span></p></li><li><p><strong><span>Gerasimovich:</span></strong><span> A &quot;fearless&quot; prisoner dressed in ill-fitting prison clothes, who shares a brief exchange with Nerzhin.</span></p></li><li><p><strong><span>Junior Lieutenant Nadelashin:</span></strong><span> A sympathetic guard who initially denies lunch but eventually provides it after the prisoners&#39; protest.</span></p></li><li><p><strong><span>Ruska:</span></strong><span> A prisoner being transferred to Butyrki for investigation, who identifies Siromakha as his informer.</span></p></li><li><p><strong><span>Siromakha:</span></strong><span> A prisoner implied to be an informer, named by Ruska.</span></p></li><li><p><strong><span>Moscow correspondent of Libération:</span></strong><span> An oblivious foreign journalist who misinterprets the camouflaged prison truck as a food delivery vehicle.</span></p></li></ul><h3 id='summary-12'><span>Summary</span></h3><ul><li><p><span>Relegated prisoners undergo a thorough search: They are frisked, and their written materials and other personal belongings are seized by guards overseen by Major Myshin.</span></p></li><li><p><span>Romashov&#39;s engineering file is impounded: Major Myshin confiscates Engineer Romashov&#39;s extensively compiled file of hydroelectric power station notes, disregarding prior authorizations.</span></p></li><li><p><span>Syomushkin destroys his Lermontov book: After his cherished Lermontov volume is taken, Syomushkin hysterically tears the pages into strips, scattering them and shouting in despair.</span></p></li><li><p><span>Nerzhin leads a successful demand for lunch: Encouraged by fellow prisoners, Nerzhin confronts Junior Lieutenant Nadelashin, refusing to leave without their allocated lunch, which is eventually served.</span></p></li><li><p><span>Prisoners are loaded into a disguised &quot;Meat&quot; truck: The twenty prisoners are herded one by one into a three-ton police truck, camouflaged with orange and blue stripes and labeled &quot;Meat.&quot;</span></p></li><li><p><span>Ruska identifies his informer from the truck: As Ruska is loaded into a separate box within the truck, he shouts that &quot;Siromakha!&quot; told on him, amidst calls of encouragement from the other zeks.</span></p></li><li><p><span>Nerzhin contrasts the special prison with their grim future: Nerzhin tells Gerasimovich that the special prison was &quot;practically paradise&quot; compared to the &quot;hell&quot; of the labor camps they are now heading to.</span></p></li></ul></div></div>
+</body>
+</html>

@@ -5,6 +5,9 @@ import os
 import sys
 import time
 import glob
+
+# Note: Install Google's GenAI library using:
+# $ pip install google-genai
 from google import genai
 from google.genai.errors import APIError as GeminiException
 
