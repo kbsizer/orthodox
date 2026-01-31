@@ -1,0 +1,7 @@
+Create token: 
+
+GitHub → Settings → Developer settings → Personal access tokens → Generate new token. Copy it once.
+
+Re-enable Pages via the API (replace YOUR_TOKEN) 
+
+curl -X PUT -H "Accept: application/vnd.github+json" -H "Authorization: token YOUR_TOKEN" https://api.github.com/repos/kbsizer/orthodox/pages -d '{"source":{"branch":"main","path":"/"}}'

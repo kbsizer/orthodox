@@ -1,12 +1,27 @@
-<!doctype html>
-<html>
-<head>
-<title>index</title>
-</head>
-<body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='in-the-first-circle'><span>In The First Circle</span></h1>
-  <h2 id='chapter-summaries-for-68-through-84summaries68through84html'><a href='summaries_68_through_84.html'><span>Chapter summaries for 68 through 84</span></a></h2>
-  <h2 id='character-map-and-chapter-summaries'><a href='In_the_First_Circle__CharacterMap.html'><span>Character Map and Chapter Summaries</span></a></h2><h2 id='ascii-text'><a href='In_the_First_Circle__Characters_ASCII.txt'><span>ASCII Text</span></a></h2>
-  <h2 id='paintings-from-chapter-46-thecastleoftheholygrail'><a href='Paintings_from_Chapter_46_The_Castle_of_the_Holy_Grail.html'><span>Paintings from Chapter 46 (The_Castle_of_the_Holy_Grail)</span></a></h2><p>&nbsp;</p></div></div>
-</body>
-</html>
+# Ken's Orthodox GitHub Repo
+Last updated: 2025-01-31 4:10pm
+
+## Contents
+
+### [GitHub Pages URL: https://kbsizer.github.io/orthodox/](https://kbsizer.github.io/orthodox/)
+
+### [In The First Circle](In_The_First_Circle_Chapters/summaries_85_through_96_standalone_clean.html)
+
+### [CRV Cheat Sheet](2004 CRV Cheat Sheet.html)
+
+## Authenticating using GitHub CLI
+```
+$ gh auth login
+? Where do you use GitHub? GitHub.com
+? What is your preferred protocol for Git operations on this host? HTTPS
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: 7CC9-1E5E
+Press Enter to open https://github.com/login/device in your browser...
+✓ Authentication complete.
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as kbsizer
+! You were already logged in to this account
+```
+
