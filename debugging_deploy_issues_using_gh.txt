@@ -1,0 +1,19 @@
+COMMANDS
+
+$ gh api repos/kbsizer/orthodox/pages --jq '.'
+
+$ gh api repos/kbsizer/orthodox/deployments?environment=github-pages --jq '.'
+
+$ gh api repos/kbsizer/orthodox --jq '.'
+
+----------
+
+Pages resource shows status: "errored" and the deployments list still stops at Dec 5, 2025. Next I need the Pages build / deployment status details so we can see why builds are errored and why new pushes aren't producing deployments.
+
+Please run these three gh commands and paste their outputs here (they only use your existing gh login — no token needed):
+
+List Pages builds: gh api repos/kbsizer/orthodox/pages/builds --jq '.'
+
+Get the latest Pages build: gh api repos/kbsizer/orthodox/pages/builds/latest --jq '.'
+
+Get statuses for the most recent deployment (ID shown in your deployments output is 3428127503): gh api repos/kbsizer/orthodox/deployments/3428127503/statuses --jq '.'
